@@ -22,20 +22,22 @@ public class InventoryManager : MonoBehaviour
     {
         
         foreach (Item item in inventoryItems)
-    {
-        if(item != null){
-            print(item.GetItemName());
-            if (itemToCheck == item.GetItemName())
-            {
-                return true;
+        {
+            if(item != null){
+                print(item.GetItemName());
+                if (itemToCheck == item.GetItemName())
+                {
+                    RemoveItem(item);
+                    return true;
+                }
+            
+                
             }
-           
-              
+        
+        
         }
-      
-       
-    }
         return false;
     }
 
+    
 }

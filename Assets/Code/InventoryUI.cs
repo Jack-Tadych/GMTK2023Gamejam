@@ -9,7 +9,7 @@ public class InventoryUI : MonoBehaviour
 
     private void Start()
     {
-        // InventoryManager inventoryManager = FindObjectOfType<InventoryManager>();
+        InventoryManager inventoryManager = FindObjectOfType<InventoryManager>();
         // inventoryManager.AddItemEvent += UpdateInventoryUI;
     }
 
