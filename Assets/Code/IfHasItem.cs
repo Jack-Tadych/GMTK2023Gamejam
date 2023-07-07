@@ -15,6 +15,7 @@ public class IfHasItem : MonoBehaviour
         {
             ChildKiller();
             spawnOject();
+            
 
             Debug.Log("Player has the " + itemToCheck + " in their inventory!");
             // Perform any actions or logic specific to having the item
