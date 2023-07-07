@@ -13,8 +13,9 @@ public class IfHasItem : MonoBehaviour
         // Check if the specified item is in the inventory
         if (inventoryManager.HasItem(itemToCheck))
         {
-            spawnOject();
             ChildKiller();
+            spawnOject();
+
             Debug.Log("Player has the " + itemToCheck + " in their inventory!");
             // Perform any actions or logic specific to having the item
         }
@@ -25,12 +26,13 @@ public class IfHasItem : MonoBehaviour
     }
     private void spawnOject()
     {
-        GameObject newObject = Instantiate(objectToSpawn);
+       GameObject newObject = Instantiate(objectToSpawn,transform.position, transform.rotation);
+       print(transform.position);
     }
     private void ChildKiller()
     {
-        foreach (Transform child in transform) {
-            Destroy(child.gameObject);
+    foreach (Transform child in transform) {
+     Destroy(child.gameObject);
         }
     }
 }

@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemToCheck: knife
-  objectToSpawn: {fileID: 230399645}
+  objectToSpawn: {fileID: 4999236181091337985, guid: 021b257584613f84aa1d91c7112cfeb4, type: 3}
 --- !u!65 &602479715
 BoxCollider:
   m_ObjectHideFlags: 0
