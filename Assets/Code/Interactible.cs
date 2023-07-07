@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Interactible : MonoBehaviour
-{private void OnMouseDown()
+{
+    private void OnMouseDown()
     {
         Debug.Log("Help me");
     }
