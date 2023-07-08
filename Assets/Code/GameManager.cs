@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
     public Transform spawnPoint;
     public GameObject playerPrefab;
     public GameObject canvasPrefab;
-
     private void Start(){
         AddPlayerAndCanvas();
     }
@@ -86,7 +85,7 @@ public class GameManager : MonoBehaviour
     public void PrintChoiceList(){
         foreach (Choice choice in choiceList)
         {
-          ChangePopupTextToSomethingElse(choice.GetDescription());
+          ChangePopupTextToSomethingElse(choice.GetDescription(), choice.getSprite());
         }
     }  
     
@@ -97,12 +96,12 @@ public class GameManager : MonoBehaviour
     }
 
     //text changer
-    public void ChangePopupTextToSomethingElse(string text){
+    public void ChangePopupTextToSomethingElse(string text, Sprite sprite){
         PopupNotification popupNotificationScript = FindObjectOfType<PopupNotification>();
 
         if (popupNotificationScript != null)
         {
-            popupNotificationScript.setPopupText(text);
+            popupNotificationScript.setPopupText(text, sprite);
         }
         else
         {
