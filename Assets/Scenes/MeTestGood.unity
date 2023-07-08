@@ -25886,6 +25886,7 @@ MonoBehaviour:
   maxDistance: 2
   y: 1.26
   rotation: {x: 0, y: 0, z: 0, w: 1}
+  ChoiceName: 
 --- !u!65 &1336047092
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27027,7 +27028,7 @@ PrefabInstance:
       objectReference: {fileID: 1579248979}
     - target: {fileID: 4999236181091337990, guid: 021b257584613f84aa1d91c7112cfeb4, type: 3}
       propertyPath: m_VersionIndex
-      value: 378
+      value: 381
       objectReference: {fileID: 0}
     - target: {fileID: 4999236181091337991, guid: 021b257584613f84aa1d91c7112cfeb4, type: 3}
       propertyPath: m_RootOrder

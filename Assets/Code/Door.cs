@@ -6,7 +6,6 @@ public class Door : MonoBehaviour
 {
     private Animator doorAnimator;
     private bool isDoorOpen = false;
-    private bool isDoorInteractable = false; //Determined by player in range or not
 
     void Start() {
         doorAnimator = GetComponent<Animator>();
@@ -15,8 +14,6 @@ public class Door : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            //get into the interactible range
-            isDoorInteractable = true;
             Debug.Log("Close enough! Press E key to open/close the door");
             ToggleDoor();
         }
@@ -36,7 +33,6 @@ public class Door : MonoBehaviour
         {
             //get into the interactible range
             Debug.Log("Player left the door");
-            isDoorInteractable = false;
             ToggleDoor();
         }
     }
