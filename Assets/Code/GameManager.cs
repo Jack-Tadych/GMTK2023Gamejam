@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Cinemachine;
 public class GameManager : MonoBehaviour
 {   
     //lists
@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public Transform spawnPoint;
     public GameObject playerPrefab;
     public GameObject canvasPrefab;
+    
 
     private void Start(){
         AddPlayerAndCanvas();
@@ -22,7 +23,27 @@ public class GameManager : MonoBehaviour
     private void Update(){
     }
     
+    public void SpawnCinemachine(){
+        // Instantiate the Cinemachine camera prefab
+        GameObject cinemachineCamera = Instantiate(cinemachineCameraPrefab);
 
+        // Get the CinemachineVirtualCamera component from the instantiated camera
+        CinemachineVirtualCamera virtualCamera = cinemachineCamera.GetComponent<CinemachineVirtualCamera>();
+
+        if (virtualCamera != null)
+        {
+            // Set the follow target of the virtual camera to the player object
+            virtualCamera.Follow = playerObject.transform;
+        }
+        else
+        {
+            Debug.LogError("CinemachineVirtualCamera component not found in Cinemachine camera prefab!");
+        }
+
+        // Additional setup and logic for the Cinemachine camera prefab
+    }
+
+  
     public void AddPlayerAndCanvas(){
         // Instantiate the player prefab
         GameObject playerObject = Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
@@ -96,7 +117,6 @@ public class GameManager : MonoBehaviour
         PrintChoiceList();
         return true;
     }
-
 
     //text changer
     public void ChangePopupTextToSomethingElse(string text){
