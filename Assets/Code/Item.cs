@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Item : MonoBehaviour
 {
     public string itemName;
-    public float maxDistance = 2f; // Maximum distance allowed for picking up the item
+    public float maxDistance = 5f; // Maximum distance allowed for picking up the item
 
     private void OnMouseDown()
     {
