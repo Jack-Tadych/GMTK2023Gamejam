@@ -26,7 +26,7 @@ public class IfHasItem : MonoBehaviour
                 {
                     ChildKiller();
                     spawnOject();
-                    
+                    gameWillRemberThat();
 
                     Debug.Log("Player has the " + itemToCheck + " in their inventory!");
                     // Perform any actions or logic specific to having the item
@@ -52,5 +52,10 @@ public class IfHasItem : MonoBehaviour
     foreach (Transform child in transform) {
      Destroy(child.gameObject);
         }
+    }
+
+    private void gameWillRemberThat(){
+        //TODO make a choice object
+        print("game will rember that");
     }
 }
