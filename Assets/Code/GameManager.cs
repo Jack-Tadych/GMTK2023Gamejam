@@ -1,34 +1,89 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private bool isKnifeClicked = false;
-
-    private void Update()
+    public List<Choice> choiceList = new List<Choice>();
+    public List<Item> inventoryItems = new List<Item>();
+    public AudioSource audioSource;
+    public AudioClip addItemSound;
+    public AudioClip removeItemSound;
+    
+    private void Start()
     {
-        // Check for mouse click
-        if (Input.GetMouseButtonDown(0))
-        {
-            // Cast a ray from the mouse position
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+       
+        
+    }
+    
+    private void Update(){
+    }
+    
 
-            // Check if the ray hits the knife object
-            if (Physics.Raycast(ray, out hit))
-            {
-                if (hit.collider.CompareTag("Knife"))
-                {
-                    // Knife object is clicked
-                    isKnifeClicked = true;
-                    Debug.Log("Knife has been clicked!");
-                }
-            }
+    //inventory methods 
+    public void AddItem(Item item){
+        inventoryItems.Add(item);
+        PlaySound(addItemSound);
+        // Additional logic for managing items in the game
+    }
+
+    public void RemoveItem(Item item){
+        inventoryItems.Remove(item);
+        PlaySound(removeItemSound);
+        // Additional logic for managing items in the game
+    }
+
+    //sound
+    private void PlaySound(AudioClip sound){
+        if (audioSource != null && sound != null)
+        {
+            audioSource.PlayOneShot(sound);
         }
     }
 
-    // Example function to check if the knife has been clicked
-    public bool IsKnifeClicked()
-    {
-        return isKnifeClicked;
+
+    public bool HasItem(string itemToCheck){
+        foreach (Item item in inventoryItems)
+        {
+            if (item != null)
+            {
+                if (itemToCheck == item.GetItemName())
+                {
+                    RemoveItem(item);
+                    return true;
+                }
+            }
+        }
+        return false;
     }
+
+    //choice methods 
+    public void PrintChoiceList(){
+        foreach (Choice choice in choiceList)
+        {
+          ChangePopupTextToSomethingElse(choice.GetDescription());
+        }
+    }  
+    
+    public bool addChoiceToList(Choice newChoice){
+        choiceList.Add(newChoice);
+        PrintChoiceList();
+        return true;
+    }
+
+
+    //text changer
+    public void ChangePopupTextToSomethingElse(string text){
+        PopupNotification popupNotificationScript = FindObjectOfType<PopupNotification>();
+
+        if (popupNotificationScript != null)
+        {
+            popupNotificationScript.setPopupText(text);
+        }
+        else
+        {
+            Debug.LogError("PopupNotification script not found!");
+        }
+    }
+
 }
