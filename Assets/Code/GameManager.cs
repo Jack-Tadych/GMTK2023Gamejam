@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public List<Choice> choiceList = new List<Choice>();
+    private List<Choice> choiceList = new List<Choice>();
     public List<Item> inventoryItems = new List<Item>();
     public AudioClip addItemSound;
     public AudioClip removeItemSound;
