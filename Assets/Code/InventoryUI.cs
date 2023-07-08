@@ -1,20 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
-    public Image inventoryIcon;
+    // Reference to the Canvas or UI element you want to show/hide
+    public GameObject uiElement;
+    private Animator animator;
 
     private void Start()
     {
-        InventoryManager inventoryManager = FindObjectOfType<InventoryManager>();
-        // inventoryManager.AddItemEvent += UpdateInventoryUI;
+        // Disable the UI element on start
+        uiElement.SetActive(false);
+
+        // Get the Animator component attached to the UI element
+        animator = uiElement.GetComponent<Animator>();
     }
 
-    private void UpdateInventoryUI(Item newItem)
+    private void Update()
     {
-        inventoryIcon.sprite = newItem.itemIcon;
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            bool isOpen = !uiElement.activeSelf;
+
+            // Toggle the UI element's visibility
+            uiElement.SetActive(isOpen);
+
+            // Trigger animation based on UI state
+            if (animator != null)
+            {
+                animator.SetBool("IsOpen", isOpen);
+            }
+        }
     }
 }
