@@ -6,7 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public List<Choice> choiceList = new List<Choice>();
     public List<Item> inventoryItems = new List<Item>();
-
+    public AudioSource audioSource;
+    public AudioClip addItemSound;
+    public AudioClip removeItemSound;
+    
     private void Start()
     {
        
@@ -20,14 +23,24 @@ public class GameManager : MonoBehaviour
     //inventory methods 
     public void AddItem(Item item){
         inventoryItems.Add(item);
-        //Debug.Log("Item added to inventory: " + item.name);
-
+        PlaySound(addItemSound);
+        // Additional logic for managing items in the game
     }
+
     public void RemoveItem(Item item){
         inventoryItems.Remove(item);
-        //Debug.Log("Item removed from inventory: " + item.name);
+        PlaySound(removeItemSound);
+        // Additional logic for managing items in the game
     }
 
+    private void PlaySound(AudioClip sound){
+        if (audioSource != null && sound != null)
+        {
+            audioSource.PlayOneShot(sound);
+        }
+    }
+
+    
     public bool HasItem(string itemToCheck){
         foreach (Item item in inventoryItems)
         {
