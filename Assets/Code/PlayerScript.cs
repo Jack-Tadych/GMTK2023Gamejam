@@ -27,20 +27,17 @@ public class PlayerScript : MonoBehaviour
 
         rb.velocity = movement * speed;
 
-        if(!sr.flipX && moveInput.x < 0)
+        if (!sr.flipX && moveInput.x < 0)
         {
-            StartCoroutine(FlipWithDelay(true));
-        }
-        else if (sr.flipX && moveInput.x > 0)
+            sr.flipX = true;
+            anim.SetTrigger("Flip");
+        } else if (sr.flipX && moveInput.x > 0)
         {
-            StartCoroutine(FlipWithDelay(false));
+            sr.flipX = false;
+            anim.SetTrigger("Flip");
         }
     }
 
-    private IEnumerator FlipWithDelay(bool flipValue)
-    {
-        anim.SetTrigger("Flip");
-        yield return new WaitForSeconds(anim.GetCurrentAnimatorClipInfo(0)[0].clip.length);
-        sr.flipX = flipValue;
-    }
+    
+
 }
