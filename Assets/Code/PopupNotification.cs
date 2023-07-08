@@ -25,21 +25,21 @@ public class PopupNotification : MonoBehaviour
                 if (popupText != null)
                 {
                     // Change the text of the Popup Notification
-                    Debug.Log("popupText found");
+                    //Debug.Log("popupText found");
                 }
                 else
                 {
-                    Debug.LogError("Text component not found in Popup Notification!");
+                    //Debug.LogError("Text component not found in Popup Notification!");
                 }
             }
             else
             {
-                Debug.LogError("Popup Notification object not found!");
+                //Debug.LogError("Popup Notification object not found!");
             }
         }
         else
         {
-            Debug.LogError("Canvas object not found!");
+           //Debug.LogError("Canvas object not found!");
         }
 
         HidePopupPanel(); // Hide the Popup Panel by default

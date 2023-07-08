@@ -26,21 +26,21 @@ public class InventoryUI : MonoBehaviour
                 if (inventoryText != null)
                 {
                     // Change the text of the InventoryPanel
-                    Debug.Log("inventoryText found");
+                    //Debug.Log("inventoryText found");
                 }
                 else
                 {
-                    Debug.LogError("Text component not found in InventoryPanel!");
+                    //Debug.LogError("Text component not found in InventoryPanel!");
                 }
             }
             else
             {
-                Debug.LogError("InventoryPanel object not found!");
+                //Debug.LogError("InventoryPanel object not found!");
             }
         }
         else
         {
-            Debug.LogError("Canvas object not found!");
+            //Debug.LogError("Canvas object not found!");
         }
         
         inventoryPanel.SetActive(false);

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
 public class GameManager : MonoBehaviour
 {   
     //lists
@@ -14,28 +13,14 @@ public class GameManager : MonoBehaviour
     public Transform spawnPoint;
     public GameObject playerPrefab;
     public GameObject canvasPrefab;
-    public CinemachineVirtualCamera camera;
-    private GameObject playerObject;
 
     private void Start(){
         AddPlayerAndCanvas();
-        LookAtPlayer();
     }
     
     private void Update(){
     }
-    
-    public void LookAtPlayer(){
-    if (camera != null)
-    {
-        camera.Follow = playerObject.transform;
-        camera.LookAt = playerObject.transform;
-    }
-    else
-    {
-        Debug.LogError("CinemachineVirtualCamera is null!");
-    }
-}
+   
 
     public void AddPlayerAndCanvas(){
         // Instantiate the player prefab
