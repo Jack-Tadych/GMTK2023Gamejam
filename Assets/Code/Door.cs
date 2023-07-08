@@ -4,28 +4,15 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-<<<<<<< HEAD
-    public Material targetMaterial;
-    [Range(0f, 1f)]
-    public float transparency = 1f;
-=======
     private Animator doorAnimator;
     private bool isDoorOpen = false;
     private bool isDoorInteractable = false; //Determined by player in range or not
-<<<<<<< HEAD
-    public string sceneToLoad;
->>>>>>> master
-=======
->>>>>>> master
 
-    private bool isPlayerInsideTrigger = false;
-    private Animator animator;
-
-    private void Start()
+    void Start() {
+        doorAnimator = GetComponent<Animator>();
+    }
+    void OnTriggerEnter(Collider other)
     {
-<<<<<<< HEAD
-        animator = GetComponent<Animator>();
-=======
         if (other.gameObject.tag == "Player")
         {
             //get into the interactible range
@@ -41,33 +28,16 @@ public class Door : MonoBehaviour
         Debug.Log("Toggling the door!");
         isDoorOpen = !isDoorOpen;
         doorAnimator.SetBool("IsOpen", isDoorOpen);
->>>>>>> master
     }
 
-    private void Update()
+    void OnTriggerExit(Collider other)
     {
-        if (isPlayerInsideTrigger)
+        if (other.gameObject.tag == "Player")
         {
-            // Trigger the animation
-            animator.SetTrigger("TriggerAnimation");
-        }
-
-        targetMaterial.SetFloat("_Alpha", transparency);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            isPlayerInsideTrigger = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            isPlayerInsideTrigger = false;
+            //get into the interactible range
+            Debug.Log("Player left the door");
+            isDoorInteractable = false;
+            ToggleDoor();
         }
     }
 }
