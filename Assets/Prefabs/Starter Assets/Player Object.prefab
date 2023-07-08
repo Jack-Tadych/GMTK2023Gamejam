@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 443521667030962071}
   - component: {fileID: 443521667030962068}
   - component: {fileID: 443521667030962089}
-  - component: {fileID: 443521667030962070}
   - component: {fileID: 443521667030962088}
   - component: {fileID: 443521667030962091}
+  - component: {fileID: 1251621099458386244}
   m_Layer: 0
   m_Name: Player Object
   m_TagString: Player
@@ -134,19 +134,6 @@ MonoBehaviour:
   speed: 5
   anim: {fileID: 443521667030962088}
   sr: {fileID: 443521667030962066}
---- !u!114 &443521667030962070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443521667030962064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92a02abef5d096a48abb9d525471db79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryItems: []
 --- !u!95 &443521667030962088
 Animator:
   serializedVersion: 4
@@ -179,5 +166,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c785f4f3f63e6f4ea7c0c6ab4f46fce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiElement: {fileID: 0}
-  inventoryText: {fileID: 0}
+--- !u!114 &1251621099458386244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443521667030962064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0b25b66711eb74ba07bcf39718a405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
