@@ -11,7 +11,7 @@ public class InventoryUI : MonoBehaviour
 
     private void Start()
     {
-        canvasObject = GameObject.Find("Canvas");
+        canvasObject = GameObject.Find("Canvas(Clone)");
 
         if (canvasObject != null)
         {

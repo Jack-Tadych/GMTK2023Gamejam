@@ -10,7 +10,7 @@ public class PopupNotification : MonoBehaviour
     private void Start()
     {
         // Find the Canvas object in the scene
-        canvasObject = GameObject.Find("Canvas");
+        canvasObject = GameObject.Find("Canvas(Clone)");
 
         if (canvasObject != null)
         {
