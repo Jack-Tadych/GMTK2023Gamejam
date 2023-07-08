@@ -30,9 +30,11 @@ public class PlayerScript : MonoBehaviour
         if (!sr.flipX && moveInput.x < 0)
         {
             sr.flipX = true;
+            anim.SetTrigger("Flip");
         } else if (sr.flipX && moveInput.x > 0)
         {
             sr.flipX = false;
+            anim.SetTrigger("Flip");
         }
     }
 
