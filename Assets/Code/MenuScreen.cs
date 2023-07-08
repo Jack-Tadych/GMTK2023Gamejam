@@ -20,7 +20,6 @@ public class MenuScreen : MonoBehaviour
         // TODO: Add code to go to the credits scene
        
         Debug.Log("Credits checkit...");
-        SceneManager.LoadScene("Credits");
     }
 
     public void ExitGame()

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Item : MonoBehaviour
 {
     public string itemName;
-    public Sprite itemIcon;
     public float maxDistance = 2f; // Maximum distance allowed for picking up the item
 
     private void OnMouseDown()
@@ -25,14 +24,14 @@ public class Item : MonoBehaviour
             }
         }
     }
-
+    public Item(string name)
+    {
+        itemName = name;
+    }
     public string GetItemName()
     {
         return itemName;
     }
 
-    public Sprite GetItemIcon()
-    {
-        return itemIcon;
-    }
+  
 }
