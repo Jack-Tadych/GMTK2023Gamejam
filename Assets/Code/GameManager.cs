@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
 {
     public List<Choice> choiceList = new List<Choice>();
     public List<Item> inventoryItems = new List<Item>();
-    public AudioSource audioSource;
     public AudioClip addItemSound;
     public AudioClip removeItemSound;
     
@@ -23,22 +22,32 @@ public class GameManager : MonoBehaviour
     //inventory methods 
     public void AddItem(Item item){
         inventoryItems.Add(item);
-        PlaySound(addItemSound);
+        SpawnAudioSource(addItemSound);
         // Additional logic for managing items in the game
     }
 
     public void RemoveItem(Item item){
         inventoryItems.Remove(item);
-        PlaySound(removeItemSound);
+        SpawnAudioSource(removeItemSound);
         // Additional logic for managing items in the game
     }
 
     //sound
-    private void PlaySound(AudioClip sound){
-        if (audioSource != null && sound != null)
-        {
-            audioSource.PlayOneShot(sound);
-        }
+    public void SpawnAudioSource(AudioClip clip){
+        // Create a new game object to hold the AudioSource
+        GameObject audioObject = new GameObject("AudioSource");
+
+        // Attach an AudioSource component to the new game object
+        AudioSource audioSource = audioObject.AddComponent<AudioSource>();
+
+        // Set the clip to play on the AudioSource
+        audioSource.clip = clip;
+
+        // Play the clip
+        audioSource.Play();
+
+        // Destroy the audioObject after the clip has finished playing
+        Destroy(audioObject, clip.length);
     }
 
 
