@@ -7,14 +7,14 @@ public class InventoryUI : MonoBehaviour
 {
     public GameObject uiElement;
     private Animator animator;
-    private InventoryManager inventoryManager;
+    private GameManager GameManager;
     public Text inventoryText;
 
     private void Start()
     {
         uiElement.SetActive(false);
         animator = uiElement.GetComponent<Animator>();
-        inventoryManager = FindObjectOfType<InventoryManager>();
+        GameManager = FindObjectOfType<GameManager>();
     }
 
     private void Update()
@@ -40,7 +40,7 @@ public class InventoryUI : MonoBehaviour
     {
         string inventoryContent = "Inventory:\n";
 
-        foreach (Item item in inventoryManager.inventoryItems)
+        foreach (Item item in GameManager.inventoryItems)
         {
             inventoryContent += "- " + item.GetItemName() + "\n";
         }

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    List<Choice> choiceList = new List<Choice>();
+    public List<Choice> choiceList = new List<Choice>();
+    public List<Item> inventoryItems = new List<Item>();
+
     private void Start()
     {
        
@@ -14,11 +16,41 @@ public class GameManager : MonoBehaviour
     private void Update(){
     }
     
+
+    //inventory methods 
+    public void AddItem(Item item)
+    {
+        inventoryItems.Add(item);
+        //Debug.Log("Item added to inventory: " + item.name);
+        
+    }
+
+    public void RemoveItem(Item item)
+    {
+        inventoryItems.Remove(item);
+        //Debug.Log("Item removed from inventory: " + item.name);
+    }
+
+    public bool HasItem(string itemToCheck){
+        foreach (Item item in inventoryItems)
+        {
+            if (item != null)
+            {
+                if (itemToCheck == item.GetItemName())
+                {
+                    RemoveItem(item);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    //choice methods 
     public void PrintChoiceList(){
-        Debug.Log("Printing choice list:");
         foreach (Choice choice in choiceList)
         {
-            Debug.Log("Choice: " + choice.GetChoiceName() + ", Value: " + choice.GetOutcomeOfChoice());
+          print(choice.GetDescription());
         }
     }  
     

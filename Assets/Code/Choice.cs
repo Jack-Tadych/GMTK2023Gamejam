@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Choice : MonoBehaviour
 {
+    private string description = "";
     private string choiceName = "";
     private bool outcomeOfChoice = false;
 
@@ -9,15 +10,21 @@ public class Choice : MonoBehaviour
     {
         return choiceName;
     }
+    public string GetDescription()
+    {
+        return description;
+    }
+
 
     public bool GetOutcomeOfChoice()
     {
         return outcomeOfChoice;
     }
 
-    public Choice(string name, bool outcome)
+    public Choice(string name, string whatYouDid, bool outcome)
     {
         choiceName = name;
+        description = whatYouDid;
         outcomeOfChoice = outcome;
     }
 
@@ -25,5 +32,6 @@ public class Choice : MonoBehaviour
     {
         Debug.Log("Choice Name: " + choiceName);
         Debug.Log("Outcome: " + outcomeOfChoice);
+        Debug.Log("Description: " + description);
     }
 }

@@ -18,8 +18,8 @@ public class Item : MonoBehaviour
             float distance = Vector3.Distance(transform.position, playerPosition);
             if (distance <= maxDistance)
             {
-                InventoryManager inventoryManager = FindObjectOfType<InventoryManager>();
-                inventoryManager.AddItem(this);
+                GameManager GameManager = FindObjectOfType<GameManager>();
+                GameManager.AddItem(this);
                 gameObject.SetActive(false);
             }
         }

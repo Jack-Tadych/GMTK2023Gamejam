@@ -594,6 +594,7 @@ MonoBehaviour:
   y: 0
   rotation: {x: 0.003752449, y: 0, z: 0, w: 0.99999297}
   ChoiceName: Move knife
+  description: You plunge the knife into The heart of dead
 --- !u!65 &602479715
 BoxCollider:
   m_ObjectHideFlags: 0
