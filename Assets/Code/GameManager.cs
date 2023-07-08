@@ -4,23 +4,28 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private InventoryManager inventoryManager;
-    
+    List<Choice> choiceList = new List<Choice>();
     private void Start()
     {
        
         
     }
     
-    private void Update()
-    {
-     
-
-
+    private void Update(){
     }
-    private string compleated(){
-
-
-    return "help";
+    
+    public void PrintChoiceList(){
+        Debug.Log("Printing choice list:");
+        foreach (Choice choice in choiceList)
+        {
+            Debug.Log("Choice: " + choice.GetChoiceName() + ", Value: " + choice.GetOutcomeOfChoice());
+        }
+    }  
+    
+    public bool addChoiceToList(Choice newChoice){
+        choiceList.Add(newChoice);
+        PrintChoiceList();
+        return true;
     }
+   
 }

@@ -7,6 +7,7 @@ public class IfHasItem : MonoBehaviour
     public float maxDistance = 2f; // Maximum distance allowed for picking up the item
     public float y = 0f; // Default value for the y position
     public Quaternion rotation = Quaternion.identity; // Default rotation
+    public string ChoiceName = "";
     private void OnMouseDown()
     {
        
@@ -28,12 +29,12 @@ public class IfHasItem : MonoBehaviour
                     spawnOject();
                     gameWillRemberThat();
 
-                    Debug.Log("Player has the " + itemToCheck + " in their inventory!");
+                    //Debug.Log("Player has the " + itemToCheck + " in their inventory!");
                     // Perform any actions or logic specific to having the item
                 }
                 else
                 {
-                    Debug.Log("Player does not have the " + itemToCheck + " in their inventory.");
+                    //Debug.Log("Player does not have the " + itemToCheck + " in their inventory.");
                 }
             }
         }
@@ -55,7 +56,20 @@ public class IfHasItem : MonoBehaviour
     }
 
     private void gameWillRemberThat(){
-        //TODO make a choice object
-        print("game will rember that");
+        // TODO: Make a choice object
+        print("game will remember that");
+
+        // Create a new Choice object
+        Choice choiceNew = new Choice(ChoiceName, true);
+
+        // Find the GameManager object in the scene
+        GameManager gameManager = FindObjectOfType<GameManager>();
+
+        // Check if the GameManager object exists
+        if (gameManager != null)
+        {
+            // Call the Beans method in the GameManager and pass the newChoice object
+            gameManager.addChoiceToList(choiceNew);
+        }
     }
 }

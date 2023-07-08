@@ -592,7 +592,8 @@ MonoBehaviour:
   objectToSpawn: {fileID: 4999236181091337985, guid: 021b257584613f84aa1d91c7112cfeb4, type: 3}
   maxDistance: 100
   y: 0
-  rotation: {x: 0, y: 0, z: 0, w: 1}
+  rotation: {x: 0.003752449, y: 0, z: 0, w: 0.99999297}
+  ChoiceName: Move knife
 --- !u!65 &602479715
 BoxCollider:
   m_ObjectHideFlags: 0

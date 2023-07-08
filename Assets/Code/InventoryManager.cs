@@ -10,14 +10,14 @@ public class InventoryManager : MonoBehaviour
     public void AddItem(Item item)
     {
         inventoryItems.Add(item);
-        Debug.Log("Item added to inventory: " + item.name);
+        //Debug.Log("Item added to inventory: " + item.name);
         randomShit();
     }
 
     public void RemoveItem(Item item)
     {
         inventoryItems.Remove(item);
-        Debug.Log("Item removed from inventory: " + item.name);
+        //Debug.Log("Item removed from inventory: " + item.name);
     }
 
     public bool HasItem(string itemToCheck){
@@ -25,7 +25,6 @@ public class InventoryManager : MonoBehaviour
         {
             if (item != null)
             {
-                print(item.GetItemName());
                 if (itemToCheck == item.GetItemName())
                 {
                     RemoveItem(item);
