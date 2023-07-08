@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
@@ -13,7 +12,10 @@ public class Door : MonoBehaviour
     private Animator doorAnimator;
     private bool isDoorOpen = false;
     private bool isDoorInteractable = false; //Determined by player in range or not
+<<<<<<< HEAD
     public string sceneToLoad;
+>>>>>>> master
+=======
 >>>>>>> master
 
     private bool isPlayerInsideTrigger = false;
@@ -30,7 +32,6 @@ public class Door : MonoBehaviour
             isDoorInteractable = true;
             Debug.Log("Close enough! Press E key to open/close the door");
             ToggleDoor();
-            SceneManager.LoadScene(sceneToLoad);
         }
     }
     //Update is executed on every frame. Think of it as always doing
