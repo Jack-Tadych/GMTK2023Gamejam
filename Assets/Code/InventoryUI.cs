@@ -7,13 +7,13 @@ public class InventoryUI : MonoBehaviour
 {
     private GameObject inventoryPanel;
     private Text inventoryText;
-    //private Animator animator;
+    private Animator animator;
     private GameManager gameManager;
     private GameObject canvasObject; // Reference to the Canvas object in the scene
     
     private void Start()
     {
-        //animator = inventoryPanel.GetComponent<Animator>();
+        animator = inventoryPanel.GetComponent<Animator>();
         gameManager = FindObjectOfType<GameManager>();
         canvasObject = GameObject.Find("Canvas");
 
