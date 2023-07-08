@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Item : MonoBehaviour
 {
     public string itemName;
-    public float maxDistance = 2f; // Maximum distance allowed for picking up the item
+    public float maxDistance = 5f; // Maximum distance allowed for picking up the item
 
     private void OnMouseDown()
     {
@@ -18,8 +18,8 @@ public class Item : MonoBehaviour
             float distance = Vector3.Distance(transform.position, playerPosition);
             if (distance <= maxDistance)
             {
-                InventoryManager inventoryManager = FindObjectOfType<InventoryManager>();
-                inventoryManager.AddItem(this);
+                GameManager GameManager = FindObjectOfType<GameManager>();
+                GameManager.AddItem(this);
                 gameObject.SetActive(false);
             }
         }

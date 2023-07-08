@@ -8,11 +8,12 @@ public class IfHasItem : MonoBehaviour
     public float y = 0f; // Default value for the y position
     public Quaternion rotation = Quaternion.identity; // Default rotation
     public string ChoiceName = "";
-    private void OnMouseDown()
-    {
+    public string description = "";
+
+    private void OnMouseDown(){
        
 
-        InventoryManager inventoryManager = FindObjectOfType<InventoryManager>();
+        GameManager GameManager = FindObjectOfType<GameManager>();
         
         // Check if the specified item is in the inventory
         GameObject playerObject = GameObject.FindWithTag("Player");
@@ -23,7 +24,7 @@ public class IfHasItem : MonoBehaviour
             float distance = Vector3.Distance(transform.position, playerPosition);
             if (distance <= maxDistance)
             {
-                if (inventoryManager.HasItem(itemToCheck))
+                if (GameManager.HasItem(itemToCheck))
                 {
                     ChildKiller();
                     spawnOject();
@@ -40,27 +41,22 @@ public class IfHasItem : MonoBehaviour
         }
         
     }
-    private void spawnOject()
-    {
+    private void spawnOject(){
        Vector3 spawnPosition = new Vector3(transform.position.x, y, transform.position.z);
         GameObject newObject = Instantiate(objectToSpawn, spawnPosition, rotation);
         // Set the spawned object's parent to be the same as the spawner's parent
         newObject.transform.SetParent(transform.parent);
        
     }
-    private void ChildKiller()
-    {
-    foreach (Transform child in transform) {
-     Destroy(child.gameObject);
-        }
+    private void ChildKiller(){
+        foreach (Transform child in transform) {
+        Destroy(child.gameObject);
+            }
     }
 
     private void gameWillRemberThat(){
-        // TODO: Make a choice object
-        print("game will remember that");
-
         // Create a new Choice object
-        Choice choiceNew = new Choice(ChoiceName, true);
+        Choice choiceNew = new Choice(ChoiceName, description, true);
 
         // Find the GameManager object in the scene
         GameManager gameManager = FindObjectOfType<GameManager>();
@@ -72,4 +68,7 @@ public class IfHasItem : MonoBehaviour
             gameManager.addChoiceToList(choiceNew);
         }
     }
+
+   
+ 
 }

@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    List<Choice> choiceList = new List<Choice>();
+    public List<Choice> choiceList = new List<Choice>();
+    public List<Item> inventoryItems = new List<Item>();
+    public AudioSource audioSource;
+    public AudioClip addItemSound;
+    public AudioClip removeItemSound;
+    
     private void Start()
     {
        
@@ -14,11 +19,49 @@ public class GameManager : MonoBehaviour
     private void Update(){
     }
     
+
+    //inventory methods 
+    public void AddItem(Item item){
+        inventoryItems.Add(item);
+        PlaySound(addItemSound);
+        // Additional logic for managing items in the game
+    }
+
+    public void RemoveItem(Item item){
+        inventoryItems.Remove(item);
+        PlaySound(removeItemSound);
+        // Additional logic for managing items in the game
+    }
+
+    //sound
+    private void PlaySound(AudioClip sound){
+        if (audioSource != null && sound != null)
+        {
+            audioSource.PlayOneShot(sound);
+        }
+    }
+
+
+    public bool HasItem(string itemToCheck){
+        foreach (Item item in inventoryItems)
+        {
+            if (item != null)
+            {
+                if (itemToCheck == item.GetItemName())
+                {
+                    RemoveItem(item);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    //choice methods 
     public void PrintChoiceList(){
-        Debug.Log("Printing choice list:");
         foreach (Choice choice in choiceList)
         {
-            Debug.Log("Choice: " + choice.GetChoiceName() + ", Value: " + choice.GetOutcomeOfChoice());
+          ChangePopupTextToSomethingElse(choice.GetDescription());
         }
     }  
     
@@ -27,5 +70,20 @@ public class GameManager : MonoBehaviour
         PrintChoiceList();
         return true;
     }
-   
+
+
+    //text changer
+    public void ChangePopupTextToSomethingElse(string text){
+        PopupNotification popupNotificationScript = FindObjectOfType<PopupNotification>();
+
+        if (popupNotificationScript != null)
+        {
+            popupNotificationScript.setPopupText(text);
+        }
+        else
+        {
+            Debug.LogError("PopupNotification script not found!");
+        }
+    }
+
 }
