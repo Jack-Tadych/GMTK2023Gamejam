@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
         // Additional logic for managing items in the game
     }
 
+    //sound
     private void PlaySound(AudioClip sound){
         if (audioSource != null && sound != null)
         {
@@ -40,7 +41,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
+
     public bool HasItem(string itemToCheck){
         foreach (Item item in inventoryItems)
         {
@@ -60,7 +61,7 @@ public class GameManager : MonoBehaviour
     public void PrintChoiceList(){
         foreach (Choice choice in choiceList)
         {
-          print(choice.GetDescription());
+          ChangePopupTextToSomethingElse(choice.GetDescription());
         }
     }  
     
@@ -69,5 +70,20 @@ public class GameManager : MonoBehaviour
         PrintChoiceList();
         return true;
     }
-   
+
+
+    //text changer
+    public void ChangePopupTextToSomethingElse(string text){
+        PopupNotification popupNotificationScript = FindObjectOfType<PopupNotification>();
+
+        if (popupNotificationScript != null)
+        {
+            popupNotificationScript.setPopupText(text);
+        }
+        else
+        {
+            Debug.LogError("PopupNotification script not found!");
+        }
+    }
+
 }

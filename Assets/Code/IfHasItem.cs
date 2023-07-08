@@ -55,9 +55,6 @@ public class IfHasItem : MonoBehaviour
     }
 
     private void gameWillRemberThat(){
-        // TODO: Make a choice object
-       
-
         // Create a new Choice object
         Choice choiceNew = new Choice(ChoiceName, description, true);
 
