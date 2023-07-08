@@ -485,7 +485,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dfc921afe054de42ac401614110aa65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choiceList: []
   inventoryItems: []
   addItemSound: {fileID: 8300000, guid: de69318dd9f558c4ba7455f6479b4846, type: 3}
   removeItemSound: {fileID: 8300000, guid: 84a9e6ca80a3b6042bd9240963618221, type: 3}
@@ -924,6 +923,10 @@ PrefabInstance:
     - target: {fileID: 5758562974260778949, guid: d90766641e3d2bc43a8ee2fba4a2867d, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758562974678947110, guid: d90766641e3d2bc43a8ee2fba4a2867d, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d90766641e3d2bc43a8ee2fba4a2867d, type: 3}
