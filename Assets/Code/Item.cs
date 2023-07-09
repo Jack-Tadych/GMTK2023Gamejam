@@ -15,7 +15,7 @@ public class Item : MonoBehaviour
 
     private void PickupItem()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             GameObject playerObject = GameObject.FindWithTag("Player");
             if (playerObject != null)
