@@ -113,6 +113,9 @@ public class GameManager : MonoBehaviour
            printchoiceListTocousel();
         }
     }
+
+
+    
     //text changer
     public void ChangePopupTextToSomethingElse(string text, Sprite sprite){
         PopupNotification popupNotificationScript = FindObjectOfType<PopupNotification>();
