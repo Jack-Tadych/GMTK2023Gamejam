@@ -201,13 +201,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InvestiGator_IDLE_7
+      name: InvestiGator_IDLE_0
       rect:
         serializedVersion: 2
         x: 5920
         y: 100
-        width: 1340
-        height: 2331
+        width: 1345
+        height: 2352
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,8 +215,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1dd706ab865f55e4397a62fb20031917
-      internalID: -1232977800
+      spriteID: 17cc76aeadf7de341aff1b53ce265797
+      internalID: -2065142172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InvestiGator_IDLE_1
+      rect:
+        serializedVersion: 2
+        x: 5920
+        y: 100
+        width: 1358
+        height: 2348
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37bf5569ef2a6c746888dae5ccb111a2
+      internalID: -2013005430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InvestiGator_IDLE_4
+      rect:
+        serializedVersion: 2
+        x: 5916
+        y: 100
+        width: 1349
+        height: 2361
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab3b8e1ad8395a41b30e06cef855e31
+      internalID: -770234204
       vertices: []
       indices: 
       edges: []
