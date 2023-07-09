@@ -29,7 +29,7 @@ public class IfHasItem : MonoBehaviour
     }
     private void PlaceItem(){
         GameManager GameManager = FindObjectOfType<GameManager>();
-        if (Input.GetKeyDown(KeyCode.F)){
+        if (Input.GetKeyDown(KeyCode.R)){
             // Check if the specified item is in the inventory
             GameObject playerObject = GameObject.FindWithTag("Player");
             if (playerObject != null)
