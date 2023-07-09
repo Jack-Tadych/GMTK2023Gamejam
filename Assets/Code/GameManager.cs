@@ -9,19 +9,20 @@ public class GameManager : MonoBehaviour
     //audios
     public AudioClip addItemSound;
     public AudioClip removeItemSound;
+    public  AudioClip firstSong;
     public Sprite defaultimage = null;
     //player location and canves
     public Transform spawnPoint;
     public GameObject playerPrefab;
     public GameObject canvasPrefab;
+
+    
     private void Start(){
         AddPlayerAndCanvas();
     }
     
     private void Update(){
     }
-   
-
     public void AddPlayerAndCanvas(){
         // Instantiate the player prefab
         GameObject playerObject = Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
@@ -47,6 +48,8 @@ public class GameManager : MonoBehaviour
         SpawnAudioSource(removeItemSound);
         // Additional logic for managing items in the game
     }
+
+
 
     //sound
     public void SpawnAudioSource(AudioClip clip){

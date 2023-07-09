@@ -52,7 +52,11 @@ public class PopupNotification : MonoBehaviour
         popupText.text = text;
         ChangePopupImage(sprite); // Call the method to change the popup image
         ShowPopupPanel();
-        Invoke("HidePopupPanel", 2f); // Hide the Popup Panel after 2 seconds
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+        HidePopupPanel();
+        }
+        ///Invoke("HidePopupPanel", 2f); // Hide the Popup Panel after 2 seconds
     }
 
     private void ChangePopupImage(Sprite sprite)
