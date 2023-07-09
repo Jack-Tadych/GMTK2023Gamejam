@@ -10,25 +10,26 @@ public class IfHasItem : MonoBehaviour
     public string ChoiceName = "";
     public string description = "";
     public Sprite spriteChoice;
-    private bool deciceanMade;
+    
 
-    private void start()
-    {
+    private bool interactedWith = false;
 
-        deciceanMade = false;
-    }
     private void Update()
     {
-        if (!deciceanMade)
-        {
-            PlaceItem();
+        PlaceItem();
+        UnaliveSelf();
+    }
+    private void UnaliveSelf(){
+        if(interactedWith && Input.GetKeyDown(KeyCode.R)){
+            GameManager GameManager = FindObjectOfType<GameManager>();
+            GameManager.RemoveChoiceFromList(ChoiceName);
+            GameManager.PrintChoiceList();
+            interactedWith = false;
         }
     }
-    private void PlaceItem()
-    {
+    private void PlaceItem(){
         GameManager GameManager = FindObjectOfType<GameManager>();
-        if (Input.GetKeyDown(KeyCode.E))
-        {
+        if (Input.GetKeyDown(KeyCode.E)){
             // Check if the specified item is in the inventory
             GameObject playerObject = GameObject.FindWithTag("Player");
             if (playerObject != null)
@@ -36,39 +37,33 @@ public class IfHasItem : MonoBehaviour
                 Vector3 playerPosition = playerObject.transform.position;
                 // Check if the player is within the maximum distance
                 float distance = Vector3.Distance(transform.position, playerPosition);
-                if (distance <= maxDistance)
-                {
-                    if (GameManager.HasItem(itemToCheck))
-                    {
-                        deciceanMade = true;
-                        ChildKiller();
+                if (distance <= maxDistance){
+                    if (GameManager.HasItem(itemToCheck)){
+                        //ChildKiller();
                         spawnOject();
                         gameWillRemberThat();
+                        interactedWith = true;
                     }
                 }
             }
 
-        }
+        }    
     }
 
-    private void spawnOject()
-    {
-        Vector3 spawnPosition = new Vector3(transform.position.x, y, transform.position.z);
+    private void spawnOject(){
+       Vector3 spawnPosition = new Vector3(transform.position.x, y, transform.position.z);
         GameObject newObject = Instantiate(objectToSpawn, spawnPosition, rotation);
         // Set the spawned object's parent to be the same as the spawner's parent
         newObject.transform.SetParent(transform.parent);
-
+       
     }
-    private void ChildKiller()
-    {
-        foreach (Transform child in transform)
-        {
-            Destroy(child.gameObject);
-        }
+    private void ChildKiller(){
+        foreach (Transform child in transform) {
+        Destroy(child.gameObject);
+            }
     }
 
-    private void gameWillRemberThat()
-    {
+    private void gameWillRemberThat(){
         // Create a new Choice object
         Choice choiceNew = new Choice(ChoiceName, description, true, spriteChoice);
 
@@ -83,6 +78,6 @@ public class IfHasItem : MonoBehaviour
         }
     }
 
-
-
+   
+ 
 }
