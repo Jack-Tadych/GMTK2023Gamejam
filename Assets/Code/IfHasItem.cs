@@ -23,7 +23,7 @@ public class IfHasItem : MonoBehaviour
         if(interactedWith && Input.GetKeyDown(KeyCode.R)){
             GameManager GameManager = FindObjectOfType<GameManager>();
             GameManager.RemoveChoiceFromList(ChoiceName);
-            GameManager.PrintChoiceList();
+            //GameManager.PrintChoiceList();
             interactedWith = false;
         }
     }
