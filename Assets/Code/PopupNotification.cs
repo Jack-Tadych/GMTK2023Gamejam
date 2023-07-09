@@ -46,17 +46,19 @@ public class PopupNotification : MonoBehaviour
 
         HidePopupPanel(); // Hide the Popup Panel by default
     }
-
+    private void Update(){
+        if (Input.GetKeyDown(KeyCode.V)){
+          HidePopupPanel();
+          print("LOng live palistaine");
+        }
+    }
     public void setPopupText(string text, Sprite sprite)
     {
         popupText.text = text;
         ChangePopupImage(sprite); // Call the method to change the popup image
         ShowPopupPanel();
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-        HidePopupPanel();
-        }
-        ///Invoke("HidePopupPanel", 2f); // Hide the Popup Panel after 2 seconds
+        
+      
     }
 
     private void ChangePopupImage(Sprite sprite)
