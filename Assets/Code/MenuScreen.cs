@@ -6,13 +6,7 @@ public class MenuScreen : MonoBehaviour
     public void StartNewGame()
     {
         // TODO: Add code to start a new game
-        Debug.Log("Starting a new game...");
-    }
-
-    public void ContinueGame()
-    {
-        // TODO: Add code to continue the game
-        Debug.Log("Continuing the game...");
+        SceneManager.LoadScene(1);
     }
 
     public void GoToCredits()
