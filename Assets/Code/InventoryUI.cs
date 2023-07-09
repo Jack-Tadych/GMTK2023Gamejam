@@ -49,7 +49,7 @@ public class InventoryUI : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             bool isOpen = !inventoryPanel.activeSelf;
             inventoryPanel.SetActive(isOpen);
@@ -63,7 +63,7 @@ public class InventoryUI : MonoBehaviour
 
     private void DisplayInventory()
     {
-        string inventoryContent = "Inventory:\n";
+        string inventoryContent = "    Inventory:\n";
 
         foreach (Item item in gameManager.inventoryItems)
         {

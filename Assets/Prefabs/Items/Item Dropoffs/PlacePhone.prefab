@@ -47,8 +47,8 @@ MonoBehaviour:
   itemToCheck: Victim's Phone
   objectToSpawn: {fileID: 7795332583813126116, guid: 30f05d28eba93474f8115f0a0179e90f, type: 3}
   maxDistance: 3
-  y: 0
-  rotation: {x: 0, y: 0, z: 0, w: 1}
+  y: 1.87
+  rotation: {x: 0.6218315, y: 0, z: 0, w: 0.7831511}
   ChoiceName: Delete messages
   description: "The victim\u2019s phone. There\u2019s a lot of messages from me on
     here..."
