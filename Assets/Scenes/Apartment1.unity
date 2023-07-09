@@ -252,6 +252,8 @@ GameObject:
   m_Component:
   - component: {fileID: 79585485}
   - component: {fileID: 79585486}
+  - component: {fileID: 79585487}
+  - component: {fileID: 79585488}
   m_Layer: 0
   m_Name: FramedPicture
   m_TagString: Untagged
@@ -267,7 +269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 79585484}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.7254338, y: 4.6195593, z: -13.075524}
+  m_LocalPosition: {x: -1.7254338, y: 4.6195593, z: -14.935}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -326,6 +328,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &79585487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79585484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faf0bf51ce1180d4db5c4aa4d2cef50c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Photo
+  maxDistance: 5
+--- !u!65 &79585488
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79585484}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.464, y: 0.46, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &170425123 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5398473317685788444, guid: 67b09d17632a2e04ba26db1e631b097f, type: 3}
@@ -440,6 +469,7 @@ GameObject:
   - component: {fileID: 276587208}
   - component: {fileID: 276587207}
   - component: {fileID: 276587206}
+  - component: {fileID: 276587209}
   m_Layer: 0
   m_Name: Coch
   m_TagString: Untagged
@@ -525,6 +555,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276587204}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &276587209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276587204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61dec7be7835930478b52c7df74492b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemToCheck: Photo
+  objectToSpawn: {fileID: 79585484}
+  maxDistance: 2
+  y: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  ChoiceName: Your mother
+  description: Put the funny!
+  spriteChoice: {fileID: 21300000, guid: b12c1ec74c56bab44a90ae335d8deb0b, type: 3}
 --- !u!1 &324552020
 GameObject:
   m_ObjectHideFlags: 0
