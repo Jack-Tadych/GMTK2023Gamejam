@@ -30,5 +30,32 @@ public class PlayerScript : MonoBehaviour
         // Trigger the move animation based on the movement
         anim.SetBool("IsMoving", isMoving);
 
+        // Mirror the animation if moving on the X axis
+        if (isMoving && Mathf.Abs(moveHorizontal) > 0.1f)
+        {
+            if (moveHorizontal > 0f && !facingRight)
+            {
+                Flip();
+            }
+            else if (moveHorizontal < 0f && facingRight)
+            {
+                Flip();
+            }
+        }
+    }
+
+    private void Flip()
+    {
+        // Toggle the facing direction
+        facingRight = !facingRight;
+
+        // Get the current scale
+        Vector3 scale = transform.localScale;
+
+        // Flip the scale on the X axis to mirror the animation
+        scale.x *= -1;
+
+        // Apply the updated scale
+        transform.localScale = scale;
     }
 }
