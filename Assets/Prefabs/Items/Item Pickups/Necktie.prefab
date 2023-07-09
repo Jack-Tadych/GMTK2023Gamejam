@@ -98,6 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Fannie's Necktie
-  maxDistance: 2
+  maxDistance: 3
   Itemdescription: A necktie. It looks like something Fannie would wear.
   something: {fileID: 21300000, guid: e0deceb370d08f74881014e62b826a8d, type: 3}
