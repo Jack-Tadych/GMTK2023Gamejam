@@ -28,6 +28,7 @@ public class Item : MonoBehaviour
                     GameManager GameManager = FindObjectOfType<GameManager>();
                     GameManager.AddItem(this);
                     gameObject.SetActive(false);
+                    //Destroy(gameObject);
                 }
             }
         }

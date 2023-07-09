@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
         Destroy(audioObject, clip.length);
     }
 
-
+    
     public bool HasItem(string itemToCheck){
         foreach (Item item in inventoryItems)
         {
@@ -88,13 +88,32 @@ public class GameManager : MonoBehaviour
           ChangePopupTextToSomethingElse(choice.GetDescription(), choice.getSprite());
         }
     }  
-    
-    public bool addChoiceToList(Choice newChoice){
-        choiceList.Add(newChoice);
-        PrintChoiceList();
-        return true;
+
+    //returns
+    private bool FindIfExists(string choiceName){
+        return choiceList.Exists(choice => choice.GetChoiceName() == choiceName);
     }
 
+     public void printchoiceListTocousel(){
+        foreach (Choice choice in choiceList)
+        {
+          print("you chose to " + choice.GetChoiceName());
+        }
+    }  
+    
+    public void addChoiceToList(Choice newChoice){
+        choiceList.Add(newChoice);
+        //printchoiceListTocousel();
+        //print(FindIfExists(newChoice.GetChoiceName()));
+    }
+
+    public void RemoveChoiceFromList(string choiceName){
+        Choice choiceToRemove = choiceList.Find(choice => choice.GetChoiceName() == choiceName);
+        if(FindIfExists(choiceName)){
+           choiceList.Remove(choiceToRemove);
+           printchoiceListTocousel();
+        }
+    }
     //text changer
     public void ChangePopupTextToSomethingElse(string text, Sprite sprite){
         PopupNotification popupNotificationScript = FindObjectOfType<PopupNotification>();

@@ -10,17 +10,21 @@ public class IfHasItem : MonoBehaviour
     public string ChoiceName = "";
     public string description = "";
     public Sprite spriteChoice;
-    private bool deciceanMade;
+    
 
-    private void start()
-    {
+    private bool interactedWith = false;
 
-        deciceanMade = false;
-    }
     private void Update()
     {
-        if(!deciceanMade){
-            PlaceItem();
+        PlaceItem();
+        UnaliveSelf();
+    }
+    private void UnaliveSelf(){
+        if(interactedWith && Input.GetKeyDown(KeyCode.R)){
+            GameManager GameManager = FindObjectOfType<GameManager>();
+            GameManager.RemoveChoiceFromList(ChoiceName);
+            GameManager.PrintChoiceList();
+            interactedWith = false;
         }
     }
     private void PlaceItem(){
@@ -35,10 +39,10 @@ public class IfHasItem : MonoBehaviour
                 float distance = Vector3.Distance(transform.position, playerPosition);
                 if (distance <= maxDistance){
                     if (GameManager.HasItem(itemToCheck)){
-                        deciceanMade = true;
-                        ChildKiller();
+                        //ChildKiller();
                         spawnOject();
                         gameWillRemberThat();
+                        interactedWith = true;
                     }
                 }
             }
