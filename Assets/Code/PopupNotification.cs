@@ -30,7 +30,6 @@ public class PopupNotification : MonoBehaviour
 
             if (popupNotification != null)
             {
-                      print("Help");
                 // Find the Text and Image components of the Popup Notification
                 popupText = popupNotification.GetComponentInChildren<Text>();
                 popupImage = popupNotification.GetComponentInChildren<Image>();
@@ -45,7 +44,7 @@ public class PopupNotification : MonoBehaviour
 
         }
 
-
+        HidequestionPannel();
         HidePopupPanel(); // Hide the Popup Panel by default
     }
 
