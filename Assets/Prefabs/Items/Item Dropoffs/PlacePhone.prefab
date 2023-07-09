@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2751199750270198224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2751199750270198225}
+  - component: {fileID: 2751199750270198238}
+  m_Layer: 0
+  m_Name: PlacePhone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2751199750270198225
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2751199750270198224}
+  m_LocalRotation: {x: 0.6218314, y: -0, z: -0, w: 0.7831512}
+  m_LocalPosition: {x: -4.8793683, y: 4.939, z: -14.690525}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2751199750270198238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2751199750270198224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61dec7be7835930478b52c7df74492b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemToCheck: Victim's Phone
+  objectToSpawn: {fileID: 7795332583813126116, guid: 30f05d28eba93474f8115f0a0179e90f, type: 3}
+  maxDistance: 3
+  y: 0
+  rotation: {x: 0, y: 0, z: 0, w: 1}
+  ChoiceName: Delete messages
+  description: "The victim\u2019s phone. There\u2019s a lot of messages from me on
+    here..."
+  spriteChoice: {fileID: 21300000, guid: 6558db34469ff9040b3f9de13d648855, type: 3}
