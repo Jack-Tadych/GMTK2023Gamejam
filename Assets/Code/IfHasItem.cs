@@ -20,7 +20,7 @@ public class IfHasItem : MonoBehaviour
         UnaliveSelf();
     }
     private void UnaliveSelf(){
-        if(interactedWith && Input.GetKeyDown(KeyCode.R)){
+        if(interactedWith && Input.GetKeyDown(KeyCode.E)){
             GameManager GameManager = FindObjectOfType<GameManager>();
             GameManager.RemoveChoiceFromList(ChoiceName);
             //GameManager.PrintChoiceList();
@@ -29,7 +29,7 @@ public class IfHasItem : MonoBehaviour
     }
     private void PlaceItem(){
         GameManager GameManager = FindObjectOfType<GameManager>();
-        if (Input.GetKeyDown(KeyCode.E)){
+        if (Input.GetKeyDown(KeyCode.F)){
             // Check if the specified item is in the inventory
             GameObject playerObject = GameObject.FindWithTag("Player");
             if (playerObject != null)

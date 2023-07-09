@@ -16,7 +16,7 @@ public class Item : MonoBehaviour
 
     private void PickupItem()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             GameObject playerObject = GameObject.FindWithTag("Player");
             if (playerObject != null)
@@ -28,6 +28,7 @@ public class Item : MonoBehaviour
                 {
                     GameManager GameManager = FindObjectOfType<GameManager>();
                     GameManager.AddItem(this);
+                    GameManager.ChangePopupTextToSomethingElse(Itemdescription, something);
                     gameObject.SetActive(false);
                     //Destroy(gameObject);
                 }
