@@ -10,9 +10,6 @@ public class IfHasItem : MonoBehaviour
     public string ChoiceName = "";
     public string description = "";
     public Sprite spriteChoice;
-<<<<<<< HEAD
-    private bool DecisionMade = false;
-=======
     private bool deciceanMade;
 
     private void start()
@@ -20,61 +17,58 @@ public class IfHasItem : MonoBehaviour
 
         deciceanMade = false;
     }
->>>>>>> master
     private void Update()
     {
-        if(!deciceanMade){
+        if (!deciceanMade)
+        {
             PlaceItem();
         }
     }
-    private void PlaceItem(){
+    private void PlaceItem()
+    {
         GameManager GameManager = FindObjectOfType<GameManager>();
-        if (Input.GetKeyDown(KeyCode.E)){
+        if (Input.GetKeyDown(KeyCode.E))
+        {
             // Check if the specified item is in the inventory
             GameObject playerObject = GameObject.FindWithTag("Player");
-            if (playerObject != null && !DecisionMade)
+            if (playerObject != null)
             {
                 Vector3 playerPosition = playerObject.transform.position;
                 // Check if the player is within the maximum distance
                 float distance = Vector3.Distance(transform.position, playerPosition);
-                if (distance <= maxDistance){
-                    if (GameManager.HasItem(itemToCheck)){
+                if (distance <= maxDistance)
+                {
+                    if (GameManager.HasItem(itemToCheck))
+                    {
                         deciceanMade = true;
                         ChildKiller();
                         spawnOject();
                         gameWillRemberThat();
-<<<<<<< HEAD
-                        DecisionMade = true;
-
-                        //Debug.Log("Player has the " + itemToCheck + " in their inventory!");
-                        // Perform any actions or logic specific to having the item
-                    }
-                    else
-                    {
-                        //Debug.Log("Player does not have the " + itemToCheck + " in their inventory.");
-=======
->>>>>>> master
                     }
                 }
             }
 
-        }    
+        }
     }
 
-    private void spawnOject(){
-       Vector3 spawnPosition = new Vector3(transform.position.x, y, transform.position.z);
+    private void spawnOject()
+    {
+        Vector3 spawnPosition = new Vector3(transform.position.x, y, transform.position.z);
         GameObject newObject = Instantiate(objectToSpawn, spawnPosition, rotation);
         // Set the spawned object's parent to be the same as the spawner's parent
         newObject.transform.SetParent(transform.parent);
-       
+
     }
-    private void ChildKiller(){
-        foreach (Transform child in transform) {
-        Destroy(child.gameObject);
-            }
+    private void ChildKiller()
+    {
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
     }
 
-    private void gameWillRemberThat(){
+    private void gameWillRemberThat()
+    {
         // Create a new Choice object
         Choice choiceNew = new Choice(ChoiceName, description, true, spriteChoice);
 
@@ -89,6 +83,6 @@ public class IfHasItem : MonoBehaviour
         }
     }
 
-   
- 
+
+
 }
