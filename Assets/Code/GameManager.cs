@@ -115,7 +115,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    
+
     //text changer
     public void ChangePopupTextToSomethingElse(string text, Sprite sprite){
         PopupNotification popupNotificationScript = FindObjectOfType<PopupNotification>();

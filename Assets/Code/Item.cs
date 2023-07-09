@@ -7,7 +7,7 @@ public class Item : MonoBehaviour
 {
     public string itemName;
     public float maxDistance = 5f; // Maximum distance allowed for picking up the item
-
+    public string  Itemdescription;
     private void Update()
     {
         PickupItem();
@@ -36,6 +36,10 @@ public class Item : MonoBehaviour
     public Item(string name)
     {
         itemName = name;
+    }
+    public Item(string name, string description ){
+        itemName = name;
+        Itemdescription = description;
     }
     public string GetItemName()
     {
