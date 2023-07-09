@@ -15,7 +15,7 @@ public class Interactscript : MonoBehaviour
 
     private void interact()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             GameObject playerObject = GameObject.FindWithTag("Player");
             if (playerObject != null)
