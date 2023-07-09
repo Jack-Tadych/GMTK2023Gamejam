@@ -103,8 +103,7 @@ public class GameManager : MonoBehaviour
     
     public void addChoiceToList(Choice newChoice){
         choiceList.Add(newChoice);
-        //printchoiceListTocousel();
-        //print(FindIfExists(newChoice.GetChoiceName()));
+        ChangePopupTextToSomethingElse(newChoice.GetDescription(), newChoice.getSprite());
     }
 
     public void RemoveChoiceFromList(string choiceName){
