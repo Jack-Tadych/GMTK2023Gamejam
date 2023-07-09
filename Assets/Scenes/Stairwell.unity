@@ -607,27 +607,27 @@ PrefabInstance:
       objectReference: {fileID: 382056259}
     - target: {fileID: 6420833705216092656, guid: 38757ab30357f6f4e9dedec8f0b64918, type: 3}
       propertyPath: m_Size.x
-      value: 49.038265
+      value: 36.175156
       objectReference: {fileID: 0}
     - target: {fileID: 6420833705216092656, guid: 38757ab30357f6f4e9dedec8f0b64918, type: 3}
       propertyPath: m_Size.y
-      value: 2.4438143
+      value: 2.7322884
       objectReference: {fileID: 0}
     - target: {fileID: 6420833705216092656, guid: 38757ab30357f6f4e9dedec8f0b64918, type: 3}
       propertyPath: m_Size.z
-      value: 24.68203
+      value: 24.076258
       objectReference: {fileID: 0}
     - target: {fileID: 6420833705216092656, guid: 38757ab30357f6f4e9dedec8f0b64918, type: 3}
       propertyPath: m_Center.x
-      value: 11.909885
+      value: 18.341415
       objectReference: {fileID: 0}
     - target: {fileID: 6420833705216092656, guid: 38757ab30357f6f4e9dedec8f0b64918, type: 3}
       propertyPath: m_Center.y
-      value: -0.17286825
+      value: -0.317105
       objectReference: {fileID: 0}
     - target: {fileID: 6420833705216092656, guid: 38757ab30357f6f4e9dedec8f0b64918, type: 3}
       propertyPath: m_Center.z
-      value: -12.265426
+      value: 10.9271965
       objectReference: {fileID: 0}
     - target: {fileID: 6420833705216092661, guid: 38757ab30357f6f4e9dedec8f0b64918, type: 3}
       propertyPath: m_RootOrder
@@ -689,7 +689,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34626
+  m_Name: pb_Mesh47058
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8616,6 +8616,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightDoorEnter
       objectReference: {fileID: 0}
+    - target: {fileID: 7712792011913145818, guid: 84f47796bf248d043ae0da4591ebe219, type: 3}
+      propertyPath: m_Size.x
+      value: 21.246231
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712792011913145818, guid: 84f47796bf248d043ae0da4591ebe219, type: 3}
+      propertyPath: m_Size.y
+      value: 2.867197
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712792011913145818, guid: 84f47796bf248d043ae0da4591ebe219, type: 3}
+      propertyPath: m_Size.z
+      value: 20.380781
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712792011913145818, guid: 84f47796bf248d043ae0da4591ebe219, type: 3}
+      propertyPath: m_Center.x
+      value: 8.388495
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712792011913145818, guid: 84f47796bf248d043ae0da4591ebe219, type: 3}
+      propertyPath: m_Center.y
+      value: -0.38456059
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712792011913145818, guid: 84f47796bf248d043ae0da4591ebe219, type: 3}
+      propertyPath: m_Center.z
+      value: -10.635535
+      objectReference: {fileID: 0}
     - target: {fileID: 7712792011913145823, guid: 84f47796bf248d043ae0da4591ebe219, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -10915,6 +10939,7 @@ GameObject:
   - component: {fileID: 1319019118}
   - component: {fileID: 1319019117}
   - component: {fileID: 1319019116}
+  - component: {fileID: 1319019120}
   m_Layer: 0
   m_Name: DoorVoid
   m_TagString: Untagged
@@ -10930,7 +10955,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319019115}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 10.000002, y: 0.6643253, z: 9.999999}
@@ -11000,6 +11025,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 180.516, z: 90}
+--- !u!114 &1319019120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319019115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a441e0d7b5e49da45803fe64f64b1a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene: Apartment1
 --- !u!43 &1343077824
 Mesh:
   m_ObjectHideFlags: 0
@@ -15171,6 +15209,7 @@ GameObject:
   - component: {fileID: 1542034864}
   - component: {fileID: 1542034863}
   - component: {fileID: 1542034862}
+  - component: {fileID: 1542034866}
   m_Layer: 0
   m_Name: DoorVoid (1)
   m_TagString: Untagged
@@ -15186,7 +15225,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542034861}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 10.000002, y: 0.6643253, z: 9.999999}
@@ -15256,6 +15295,113 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1542034866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542034861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a441e0d7b5e49da45803fe64f64b1a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene: Apartment2
+--- !u!1 &1562163485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1562163487}
+  - component: {fileID: 1562163486}
+  m_Layer: 0
+  m_Name: Point Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &1562163486
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562163485}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &1562163487
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562163485}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.2958579, y: 8.42, z: 1.89}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1663826984
 Mesh:
   m_ObjectHideFlags: 0
@@ -15436,7 +15582,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34586
+  m_Name: pb_Mesh47028
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15698,7 +15844,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-144110
+  m_Name: pb_Mesh-179460
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15880,7 +16026,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2098867974}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.39, y: 0.52, z: -2.618}
+  m_LocalPosition: {x: -0.751, y: 5.54, z: 1.197}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

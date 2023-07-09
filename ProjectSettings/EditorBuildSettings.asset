@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Apartment1.unity
     guid: 36c16c9d68d631b499eae4ebc285d375
+  - enabled: 1
+    path: Assets/Scenes/Stairwell.unity
+    guid: 4b3df3af2a10b574f880e509648677cd
+  - enabled: 1
+    path: Assets/Scenes/Apartment2.unity
+    guid: ad5db0c700189e9409ef3340f683394e
   m_configObjects: {}
