@@ -35,10 +35,12 @@ public class PlayerScript : MonoBehaviour
         {
             if (moveHorizontal > 0f && !facingRight)
             {
+                anim.SetTrigger("Flip");
                 Flip();
             }
             else if (moveHorizontal < 0f && facingRight)
             {
+                anim.SetTrigger("Flip");
                 Flip();
             }
         }

@@ -98,4 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Victim's Phone
-  maxDistance: 4
+  maxDistance: 3
+  Itemdescription: "The victim\u2019s phone. There\u2019s a lot of messages from
+    me on here..."
+  something: {fileID: 21300000, guid: 6558db34469ff9040b3f9de13d648855, type: 3}
