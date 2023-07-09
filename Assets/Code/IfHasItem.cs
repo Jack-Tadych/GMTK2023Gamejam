@@ -9,7 +9,7 @@ public class IfHasItem : MonoBehaviour
     public Quaternion rotation = Quaternion.identity; // Default rotation
     public string ChoiceName = "";
     public string description = "";
-
+    public Sprite spriteChoice;
     private void OnMouseDown(){
        
 
@@ -56,7 +56,7 @@ public class IfHasItem : MonoBehaviour
 
     private void gameWillRemberThat(){
         // Create a new Choice object
-        Choice choiceNew = new Choice(ChoiceName, description, true);
+        Choice choiceNew = new Choice(ChoiceName, description, true, spriteChoice);
 
         // Find the GameManager object in the scene
         GameManager gameManager = FindObjectOfType<GameManager>();
