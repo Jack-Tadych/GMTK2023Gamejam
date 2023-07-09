@@ -98,6 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Towel
-  maxDistance: 2
+  maxDistance: 3
   Itemdescription: Oh, wow. This looks handmade! I wonder if Fannie made this...
   something: {fileID: 21300000, guid: e129417bf69373d41a22b948d3f9b54d, type: 3}
