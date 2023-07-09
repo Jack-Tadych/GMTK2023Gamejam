@@ -5,7 +5,7 @@ public class Choice : MonoBehaviour
     private string description = "";
     private string choiceName = "";
     private bool outcomeOfChoice = false;
-    private Sprite choiceSprite;
+    private Sprite choiceSprite = null;
 
     public string GetChoiceName()
     {
