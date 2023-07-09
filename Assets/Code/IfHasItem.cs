@@ -10,36 +10,42 @@ public class IfHasItem : MonoBehaviour
     public string ChoiceName = "";
     public string description = "";
     public Sprite spriteChoice;
-    private void OnMouseDown(){
+
+    private void Update()
+    {
+    PlaceItem();
+    }
+    private void PlaceItem(){
        
 
         GameManager GameManager = FindObjectOfType<GameManager>();
-        
-        // Check if the specified item is in the inventory
-        GameObject playerObject = GameObject.FindWithTag("Player");
-        if (playerObject != null)
-        {
-            Vector3 playerPosition = playerObject.transform.position;
-            // Check if the player is within the maximum distance
-            float distance = Vector3.Distance(transform.position, playerPosition);
-            if (distance <= maxDistance)
+        if (Input.GetKeyDown(KeyCode.E)){
+            // Check if the specified item is in the inventory
+            GameObject playerObject = GameObject.FindWithTag("Player");
+            if (playerObject != null)
             {
-                if (GameManager.HasItem(itemToCheck))
+                Vector3 playerPosition = playerObject.transform.position;
+                // Check if the player is within the maximum distance
+                float distance = Vector3.Distance(transform.position, playerPosition);
+                if (distance <= maxDistance)
                 {
-                    ChildKiller();
-                    spawnOject();
-                    gameWillRemberThat();
+                    if (GameManager.HasItem(itemToCheck))
+                    {
+                        ChildKiller();
+                        spawnOject();
+                        gameWillRemberThat();
 
-                    //Debug.Log("Player has the " + itemToCheck + " in their inventory!");
-                    // Perform any actions or logic specific to having the item
-                }
-                else
-                {
-                    //Debug.Log("Player does not have the " + itemToCheck + " in their inventory.");
+                        //Debug.Log("Player has the " + itemToCheck + " in their inventory!");
+                        // Perform any actions or logic specific to having the item
+                    }
+                    else
+                    {
+                        //Debug.Log("Player does not have the " + itemToCheck + " in their inventory.");
+                    }
                 }
             }
-        }
-        
+
+        }    
     }
     private void spawnOject(){
        Vector3 spawnPosition = new Vector3(transform.position.x, y, transform.position.z);
