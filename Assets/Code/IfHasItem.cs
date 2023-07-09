@@ -10,7 +10,7 @@ public class IfHasItem : MonoBehaviour
     public string ChoiceName = "";
     public string description = "";
     public Sprite spriteChoice;
-
+    private bool DecisionMade = false;
     private void Update()
     {
     PlaceItem();
@@ -22,7 +22,7 @@ public class IfHasItem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E)){
             // Check if the specified item is in the inventory
             GameObject playerObject = GameObject.FindWithTag("Player");
-            if (playerObject != null)
+            if (playerObject != null && !DecisionMade)
             {
                 Vector3 playerPosition = playerObject.transform.position;
                 // Check if the player is within the maximum distance
@@ -34,6 +34,7 @@ public class IfHasItem : MonoBehaviour
                         ChildKiller();
                         spawnOject();
                         gameWillRemberThat();
+                        DecisionMade = true;
 
                         //Debug.Log("Player has the " + itemToCheck + " in their inventory!");
                         // Perform any actions or logic specific to having the item
