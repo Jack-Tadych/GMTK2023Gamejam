@@ -10,14 +10,20 @@ public class IfHasItem : MonoBehaviour
     public string ChoiceName = "";
     public string description = "";
     public Sprite spriteChoice;
+    private bool deciceanMade;
 
+    private void start()
+    {
+
+        deciceanMade = false;
+    }
     private void Update()
     {
-    PlaceItem();
+        if(!deciceanMade){
+            PlaceItem();
+        }
     }
     private void PlaceItem(){
-       
-
         GameManager GameManager = FindObjectOfType<GameManager>();
         if (Input.GetKeyDown(KeyCode.E)){
             // Check if the specified item is in the inventory
@@ -27,26 +33,19 @@ public class IfHasItem : MonoBehaviour
                 Vector3 playerPosition = playerObject.transform.position;
                 // Check if the player is within the maximum distance
                 float distance = Vector3.Distance(transform.position, playerPosition);
-                if (distance <= maxDistance)
-                {
-                    if (GameManager.HasItem(itemToCheck))
-                    {
+                if (distance <= maxDistance){
+                    if (GameManager.HasItem(itemToCheck)){
+                        deciceanMade = true;
                         ChildKiller();
                         spawnOject();
                         gameWillRemberThat();
-
-                        //Debug.Log("Player has the " + itemToCheck + " in their inventory!");
-                        // Perform any actions or logic specific to having the item
-                    }
-                    else
-                    {
-                        //Debug.Log("Player does not have the " + itemToCheck + " in their inventory.");
                     }
                 }
             }
 
         }    
     }
+
     private void spawnOject(){
        Vector3 spawnPosition = new Vector3(transform.position.x, y, transform.position.z);
         GameObject newObject = Instantiate(objectToSpawn, spawnPosition, rotation);
