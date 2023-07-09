@@ -33,7 +33,7 @@ public class Foreground : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInsideTrigger = true;
-            Debug.Log("Going through!");
+            //Debug.Log("Going through!");
             ToggleWall();
             Kidnapper(false);
         }
@@ -70,7 +70,7 @@ public class Foreground : MonoBehaviour
 
     void ToggleWall()
     {
-        Debug.Log("Toggling the wall!");
+       // Debug.Log("Toggling the wall!");
         isWallOpen = !isWallOpen;
         anim.SetBool("Door", isWallOpen);
     }
@@ -80,7 +80,7 @@ public class Foreground : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInsideTrigger = false;
-            Debug.Log("Going Through!");
+           // Debug.Log("Going Through!");
             ToggleWall();
             Kidnapper(true);
         }

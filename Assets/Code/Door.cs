@@ -17,7 +17,7 @@ public class Door : MonoBehaviour
         {
             //get into the interactible range
             isDoorInteractable = true;
-            Debug.Log("Close enough! Press E key to open/close the door");
+            //Debug.Log("Close enough! Press E key to open/close the door");
             ToggleDoor();
         }
     }
@@ -25,7 +25,7 @@ public class Door : MonoBehaviour
     
     //ToggleDoor: Toggle the isDoorOpen flag and inform the animator the new state
     void ToggleDoor() {
-        Debug.Log("Toggling the door!");
+        //Debug.Log("Toggling the door!");
         isDoorOpen = !isDoorOpen;
         doorAnimator.SetBool("IsOpen", isDoorOpen);
     }
@@ -35,7 +35,7 @@ public class Door : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             //get into the interactible range
-            Debug.Log("Player left the door");
+            //Debug.Log("Player left the door");
             isDoorInteractable = false;
             ToggleDoor();
         }
