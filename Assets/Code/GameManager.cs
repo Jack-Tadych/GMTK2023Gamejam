@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     //audios
     public AudioClip addItemSound;
     public AudioClip removeItemSound;
+    public Sprite defaultimage = null;
     //player location and canves
     public Transform spawnPoint;
     public GameObject playerPrefab;
@@ -129,5 +130,16 @@ public class GameManager : MonoBehaviour
             Debug.LogError("PopupNotification script not found!");
         }
     }
+     public void changeJustTheText(string text){
+        PopupNotification popupNotificationScript = FindObjectOfType<PopupNotification>();
 
+        if (popupNotificationScript != null)
+        {
+            popupNotificationScript.setPopupText(text, defaultimage);
+        }
+        else
+        {
+            Debug.LogError("PopupNotification script not found!");
+        }
+    }
 }
