@@ -1,19 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    private Rigidbody rb;
     public float speed = 5f;
-
-    public Animator anim;
-    private Vector2 moveInput;
+    private Rigidbody rb;
+    private Animator anim;
     public SpriteRenderer sr;
+    private bool facingRight = true;
+    private bool hasFlipped = false;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -21,23 +20,42 @@ public class PlayerScript : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        moveInput = new Vector2(moveHorizontal, moveVertical);
-
         Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
 
         rb.velocity = movement * speed;
 
-        if (!sr.flipX && moveInput.x < 0)
+        // Check if the player is moving
+        bool isMoving = rb.velocity.magnitude > 0.1f;
+
+        // Trigger the move animation based on the movement
+        anim.SetBool("IsMoving", isMoving);
+
+        // Mirror the animation if moving on the X axis
+        if (isMoving && Mathf.Abs(moveHorizontal) > 0.1f)
         {
-            sr.flipX = true;
-            anim.SetTrigger("Flip");
-        } else if (sr.flipX && moveInput.x > 0)
-        {
-            sr.flipX = false;
-            anim.SetTrigger("Flip");
+            if (moveHorizontal > 0f && !facingRight)
+            {
+                Flip();
+            }
+            else if (moveHorizontal < 0f && facingRight)
+            {
+                Flip();
+            }
         }
     }
 
-    
+    private void Flip()
+    {
+        // Toggle the facing direction
+        facingRight = !facingRight;
 
+        // Get the current scale
+        Vector3 scale = transform.localScale;
+
+        // Flip the scale on the X axis to mirror the animation
+        scale.x *= -1;
+
+        // Apply the updated scale
+        transform.localScale = scale;
+    }
 }

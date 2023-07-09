@@ -9,38 +9,47 @@ public class IfHasItem : MonoBehaviour
     public Quaternion rotation = Quaternion.identity; // Default rotation
     public string ChoiceName = "";
     public string description = "";
+    public Sprite spriteChoice;
+    
 
-    private void OnMouseDown(){
-       
+    private bool interactedWith = false;
 
+    private void Update()
+    {
+        PlaceItem();
+        UnaliveSelf();
+    }
+    private void UnaliveSelf(){
+        if(interactedWith && Input.GetKeyDown(KeyCode.E)){
+            GameManager GameManager = FindObjectOfType<GameManager>();
+            GameManager.RemoveChoiceFromList(ChoiceName);
+            //GameManager.PrintChoiceList();
+            interactedWith = false;
+        }
+    }
+    private void PlaceItem(){
         GameManager GameManager = FindObjectOfType<GameManager>();
-        
-        // Check if the specified item is in the inventory
-        GameObject playerObject = GameObject.FindWithTag("Player");
-        if (playerObject != null)
-        {
-            Vector3 playerPosition = playerObject.transform.position;
-            // Check if the player is within the maximum distance
-            float distance = Vector3.Distance(transform.position, playerPosition);
-            if (distance <= maxDistance)
+        if (Input.GetKeyDown(KeyCode.R)){
+            // Check if the specified item is in the inventory
+            GameObject playerObject = GameObject.FindWithTag("Player");
+            if (playerObject != null)
             {
-                if (GameManager.HasItem(itemToCheck))
-                {
-                    ChildKiller();
-                    spawnOject();
-                    gameWillRemberThat();
-
-                    //Debug.Log("Player has the " + itemToCheck + " in their inventory!");
-                    // Perform any actions or logic specific to having the item
-                }
-                else
-                {
-                    //Debug.Log("Player does not have the " + itemToCheck + " in their inventory.");
+                Vector3 playerPosition = playerObject.transform.position;
+                // Check if the player is within the maximum distance
+                float distance = Vector3.Distance(transform.position, playerPosition);
+                if (distance <= maxDistance){
+                    if (GameManager.HasItem(itemToCheck)){
+                        //ChildKiller();
+                        spawnOject();
+                        gameWillRemberThat();
+                        interactedWith = true;
+                    }
                 }
             }
-        }
-        
+
+        }    
     }
+
     private void spawnOject(){
        Vector3 spawnPosition = new Vector3(transform.position.x, y, transform.position.z);
         GameObject newObject = Instantiate(objectToSpawn, spawnPosition, rotation);
@@ -56,7 +65,7 @@ public class IfHasItem : MonoBehaviour
 
     private void gameWillRemberThat(){
         // Create a new Choice object
-        Choice choiceNew = new Choice(ChoiceName, description, true);
+        Choice choiceNew = new Choice(ChoiceName, description, true, spriteChoice);
 
         // Find the GameManager object in the scene
         GameManager gameManager = FindObjectOfType<GameManager>();

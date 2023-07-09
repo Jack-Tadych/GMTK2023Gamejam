@@ -5,6 +5,7 @@ public class Choice : MonoBehaviour
     private string description = "";
     private string choiceName = "";
     private bool outcomeOfChoice = false;
+    private Sprite choiceSprite = null;
 
     public string GetChoiceName()
     {
@@ -14,6 +15,9 @@ public class Choice : MonoBehaviour
     {
         return description;
     }
+    public Sprite getSprite(){
+        return choiceSprite;
+    }
 
 
     public bool GetOutcomeOfChoice()
@@ -21,11 +25,12 @@ public class Choice : MonoBehaviour
         return outcomeOfChoice;
     }
 
-    public Choice(string name, string whatYouDid, bool outcome)
+    public Choice(string name, string whatYouDid, bool outcome, Sprite sprite)
     {
         choiceName = name;
         description = whatYouDid;
         outcomeOfChoice = outcome;
+        choiceSprite = sprite;
     }
 
     public void PrintChoice()

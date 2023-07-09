@@ -7,26 +7,41 @@ public class Item : MonoBehaviour
 {
     public string itemName;
     public float maxDistance = 5f; // Maximum distance allowed for picking up the item
-
-    private void OnMouseDown()
+    public string  Itemdescription;
+    public Sprite something;
+    private void Update()
     {
-        GameObject playerObject = GameObject.FindWithTag("Player");
-        if (playerObject != null)
+        PickupItem();
+    }
+
+    private void PickupItem()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            Vector3 playerPosition = playerObject.transform.position;
-            // Check if the player is within the maximum distance
-            float distance = Vector3.Distance(transform.position, playerPosition);
-            if (distance <= maxDistance)
+            GameObject playerObject = GameObject.FindWithTag("Player");
+            if (playerObject != null)
             {
-                GameManager GameManager = FindObjectOfType<GameManager>();
-                GameManager.AddItem(this);
-                gameObject.SetActive(false);
+                Vector3 playerPosition = playerObject.transform.position;
+                // Check if the player is within the maximum distance
+                float distance = Vector3.Distance(transform.position, playerPosition);
+                if (distance <= maxDistance)
+                {
+                    GameManager GameManager = FindObjectOfType<GameManager>();
+                    GameManager.AddItem(this);
+                    GameManager.ChangePopupTextToSomethingElse(Itemdescription, something);
+                    gameObject.SetActive(false);
+                    //Destroy(gameObject);
+                }
             }
         }
     }
     public Item(string name)
     {
         itemName = name;
+    }
+    public Item(string name, string description ){
+        itemName = name;
+        Itemdescription = description;
     }
     public string GetItemName()
     {

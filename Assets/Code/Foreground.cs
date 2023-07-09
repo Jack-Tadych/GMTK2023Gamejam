@@ -5,6 +5,7 @@ using UnityEngine;
 public class Foreground : MonoBehaviour
 {
     public Material targetMaterial;
+   
     [Range(0f, 1f)]
     public float transparency = 1f;
 
@@ -34,8 +35,38 @@ public class Foreground : MonoBehaviour
             isPlayerInsideTrigger = true;
             Debug.Log("Going through!");
             ToggleWall();
+            Kidnapper(false);
         }
     }
+
+    private void Kidnapper(bool isVisible)
+    {
+        foreach (Transform child in transform)
+        {
+            Renderer childRenderer = child.GetComponent<Renderer>();
+            if (childRenderer != null)
+            {
+                childRenderer.enabled = isVisible;
+            }
+
+            // Check if the child has any children
+            if (child.childCount > 0)
+            {
+                // Iterate over the child's children
+                foreach (Transform grandchild in child)
+                {
+                    Renderer grandchildRenderer = grandchild.GetComponent<Renderer>();
+                    if (grandchildRenderer != null)
+                    {
+                        grandchildRenderer.enabled = isVisible;
+                    }
+                }
+            }
+        }
+    }
+
+
+
 
     void ToggleWall()
     {
@@ -51,6 +82,7 @@ public class Foreground : MonoBehaviour
             isPlayerInsideTrigger = false;
             Debug.Log("Going Through!");
             ToggleWall();
+            Kidnapper(true);
         }
     }
 }
