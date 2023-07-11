@@ -6,7 +6,7 @@ public class PopupNotification : MonoBehaviour
     private GameObject canvasObject; // Reference to the Canvas object in the scene
     private GameObject popupNotification; // Reference to the Popup Notification child object
     private Text popupText; // Reference to the Text component of the Popup Notification
-    private Image popupImage; // Reference to the Image component of the Popup Notification
+    private Image IconImage; // Reference to the Image component of the Popup Notification
     private Image  popupPannal; 
 
 
@@ -20,27 +20,9 @@ public class PopupNotification : MonoBehaviour
         // Find the Canvas object in the scene
         canvasObject = GameObject.Find("Canvas(Clone)");
 
-        if (canvasObject != null)
-        {
-            // Find the Popup Notification child object
-            popupNotification = canvasObject.transform.Find("PopupNotification").gameObject;
-            popupQestion = canvasObject.transform.Find("Panel").gameObject;
-
-            
-
-            if (popupNotification != null)
-            {
-                // Find the Text and Image components of the Popup Notification
-                popupText = popupNotification.GetComponentInChildren<Text>();
-                popupImage = popupNotification.GetComponentInChildren<Image>();
-                popupPannal = popupNotification.GetComponentInChildren<Image>();
-     
-            }
-            if (popupQestion != null){
-                popupQuestionYes = popupNotification.GetComponentInChildren<Button>();
-                popupQuestionNO = popupNotification.GetComponentInChildren<Button>();
-                 
-            }
+        if (canvasObject != null){
+           getPopupNofifications();
+           getbuttons();
 
         }
 
@@ -48,57 +30,67 @@ public class PopupNotification : MonoBehaviour
         HidePopupPanel(); // Hide the Popup Panel by default
     }
 
+
     private void Update(){
         if (Input.GetKeyDown(KeyCode.V)){
           HidePopupPanel();
           HidequestionPannel();
         }
     }
+
+  private void getPopupNofifications(){
+    // Find the Popup Notification child object
+    popupNotification = canvasObject.transform.Find("PopupNotification").gameObject;
+
+    if (popupNotification != null)
+    {
+        // Find the Text component of the Popup Notification
+        popupText = popupNotification.GetComponentInChildren<Text>();
+
+        // Find the Image components of the Popup Notification
+        Image[] images = popupNotification.GetComponentsInChildren<Image>();
+        foreach (Image image in images)
+        {
+            if (image.gameObject != popupNotification)
+            {
+                // Assign the Image component to the appropriate reference
+                if (image.gameObject.name == "IconImage")
+                {
+                    IconImage = image;
+                }
+                else if (image.gameObject.name == "PopupPanel")
+                {
+                    popupPannal = image;
+                }
+            }
+        }
+    }
+}
+
+    private void getbuttons(){
+        popupQestion = canvasObject.transform.Find("Panel").gameObject;
+        if (popupQestion != null){
+                    popupQuestionYes = popupNotification.GetComponentInChildren<Button>();
+                    popupQuestionNO = popupNotification.GetComponentInChildren<Button>();
+                    
+                }
+
+    }
+    private void HidequestionPannel(){
+        popupQestion.SetActive(false);
+    }
+
     public void setPopupText(string text, Sprite sprite)
     {
         popupText.text = text;
-        ChangePopupImage(sprite); // Call the method to change the popup image
+        IconImage.sprite = sprite;
         ShowPopupPanel();
         
       
     }
 
+ 
 
-    public void HidequestionPannel(){
-        popupQestion.SetActive(false);
-    }
-    
-    
-    public void Yes()
-    {
-        Debug.Log("Yes");
-    }
-
-    public void No()
-    {
-        Debug.Log("No");
-    }
-
-    
-    private void ChangePopupImage(Sprite sprite)
-    {
-        if (popupNotification != null)
-        {
-            Image[] imageComponents = popupNotification.GetComponentsInChildren<Image>();
-            foreach (Image imageComponent in imageComponents)
-            {
-                if (imageComponent.gameObject != popupNotification)
-                {
-                    imageComponent.sprite = sprite;
-                    break;
-                }
-            }
-        }
-        else
-        {
-            Debug.LogError("Popup Notification object not found!");
-        }
-    }
 
     private void ShowPopupPanel()
     {
