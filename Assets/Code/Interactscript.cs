@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class Interactscript : MonoBehaviour
 
 {
-   public string  objectInfo;
-   public Sprite objectsprit;
-   public float maxDistance = 5f; // Maximum distance allowed for picking up the item
+   public float maxDistance = 5f; 
+   public DialogueRunner dialogueRunner;
+
+
    private void Update()
     {
         interact();
@@ -17,18 +19,16 @@ public class Interactscript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            GameObject playerObject = GameObject.FindWithTag("Player");
-            if (playerObject != null)
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance))
             {
-                Vector3 playerPosition = playerObject.transform.position;
-                // Check if the player is within the maximum distance
-                float distance = Vector3.Distance(transform.position, playerPosition);
-                if (distance <= maxDistance)
+                if (hit.collider.CompareTag("Intractable"))
                 {
-                    GameManager GameManager = FindObjectOfType<GameManager>();
-                    GameManager.ChangePopupTextToSomethingElse(objectInfo, objectsprit);
-                }
-            }
+                    string objectName = hit.collider.gameObject.name;
+                    Debug.Log("Interacted with: " + objectName);
+                      dialogueRunner.StartDialogue(objectName);
+                } 
+            }           
         }
     }
 }

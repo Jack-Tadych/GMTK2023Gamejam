@@ -1,16 +1,57 @@
 title: Start
+position: -34,-391
 ---
 Companion: Hi there! What do you feel like doing today?
-
+My number is { getMyNumber() }!
+<<setMyNumber "999">>
+But now it's { getMyNumber() }!
 -> Player: I want to go swimming.
     Companion: Okay, let's go swimming.
-    Companion: Where do you want to swim?
-    -> Player: The lake!
-        Companion: Nice! It's a great day for it.
-    -> Player: The swimming pool!
-        Companion: Oh, awesome! I heard they installed a new slide.
+    <<jump Swimming>>
 -> Player: I'd prefer to go hiking.
     Companion: Cool, we'll go hiking then.
-    
-Player: Sounds good
+    <<jump Hiking>>
+===
+title: Swimming
+position: -237,150
+---
+Companion: Where do you want to swim?
+-> Player: The lake!
+    Companion: Nice! It's a great day for it.
+-> Player: The swimming pool!
+    Companion: Oh, awesome! I heard they installed a new slide.
+
+<<jump Done>>
+===
+title: Hiking
+position: -178,-140
+---
+Companion: Have you got your hiking boots ready?
+-> Player: Yes.
+    Companion: Great, let's go!
+-> Player: No.
+    Companion: We can swing by your place and pick them up!
+
+<<jump Done>>
+===
+title: Done
+position: 281,9
+---
+Player: Sounds good!
+<<add_to_inventory "Sword">>
+===
+title: MenuCircled
+position: -263,-402
+---
+A menu from the Deli. 
+[bounce]It looks like the victim circled one of the options[/bounce]
+<<add_to_inventory "Menu">>
+<<stop>>
+===
+title:  Glass
+position: -263,-402
+---
+I broke the window when I came in last night.
+<<add_to_inventory "Glass">>
+<<stop>>
 ===

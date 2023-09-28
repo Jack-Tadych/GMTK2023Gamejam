@@ -1,14 +1,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using Yarn.Unity;
 public class InventoryUI : MonoBehaviour
 {
     private GameObject inventoryPanel;
     private Text inventoryText;
     private GameManager gameManager;
     private GameObject canvasObject; // Reference to the Canvas object in the scene
+    private List<string> inventory = new List<string>();
 
+   static string temp = "";
+
+    // note: all Yarn Functions must be static
+    // [YarnFunction("getMyNumber")]
+    // public static string GetMyNumber() { 
+    //     return myNumber; 
+    // }
+
+    // Yarb Commands can be static or non-static
+    [YarnCommand("add_to_inventory")]
+    public static void SetMyNumber(string item) { 
+        Debug.Log($"Added {item} to inventory!");
+    }
+
+    // Other inventory management methods can be added here...
+
+    // Method to check if an item is in the inventory
+    public bool HasItem(string item) {
+        return inventory.Contains(item);
+    }
     private void Start()
     {
         canvasObject = GameObject.Find("Canvas(Clone)");
