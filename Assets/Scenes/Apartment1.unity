@@ -334,7 +334,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28354707}
-  m_LocalRotation: {x: 0.7763753, y: 0.0000000134949385, z: 0.000000010955355, w: 0.6302709}
+  m_LocalRotation: {x: 0.7763753, y: 0.000000013686768, z: 0.000000011111085, w: 0.6302709}
   m_LocalPosition: {x: -3.3992116, y: 0.41099644, z: 1.8139752}
   m_LocalScale: {x: 0.9318015, y: 0.66479534, z: 0.2451966}
   m_ConstrainProportionsScale: 0
@@ -7334,8 +7334,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 940395070}
-  m_LocalRotation: {x: 0.63413024, y: -0.31285596, z: 0.31285596, w: 0.63413024}
-  m_LocalPosition: {x: 5.798, y: 1.248, z: 0.5930004}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 5.684, y: 0.291, z: 17.429}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8104,7 +8104,7 @@ GameObject:
   - component: {fileID: 1104563516}
   m_Layer: 0
   m_Name: GlassShards
-  m_TagString: Untagged
+  m_TagString: Intractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

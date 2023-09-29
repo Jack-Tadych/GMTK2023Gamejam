@@ -48,7 +48,7 @@ A menu from the Deli.
 <<add_to_inventory "Menu">>
 <<stop>>
 ===
-title:  Glass
+title: GlassShards
 position: -263,-402
 ---
 I broke the window when I came in last night.
