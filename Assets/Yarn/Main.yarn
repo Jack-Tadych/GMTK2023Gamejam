@@ -1,4 +1,9 @@
-title: Start
+title: start
+postion: 0,0
+---
+<<declare $hasPhone = false as bool>>
+===
+title: other
 position: -34,-391
 ---
 Companion: Hi there! What do you feel like doing today?
@@ -58,7 +63,14 @@ I broke the window when I came in last night.
 title: Phone
 position: -263,-402
 ---
-The victim’s phone. There’s a lot of messages from me on here...
-<<add_to_inventory "Vphone">>
+
+<<if !$hasPhone>>
+    The victim’s phone. There’s a lot of messages from me on here...
+    <<add_to_inventory "Vphone">>
+    <<set $hasPhone to true>>
+<<else>>
+    I already have it
+<<endif>>
+
 <<stop>>
 ===
