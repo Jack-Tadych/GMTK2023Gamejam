@@ -55,3 +55,10 @@ I broke the window when I came in last night.
 <<add_to_inventory "Glass">>
 <<stop>>
 ===
+title: Phone
+position: -263,-402
+---
+The victim’s phone. There’s a lot of messages from me on here...
+<<add_to_inventory "Vphone">>
+<<stop>>
+===

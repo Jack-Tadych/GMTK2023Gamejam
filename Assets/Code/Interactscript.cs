@@ -4,16 +4,17 @@ using UnityEngine;
 using Yarn.Unity;
 
 public class Interactscript : MonoBehaviour
-
 {
-   public float maxDistance = 5f; 
-   private DialogueRunner dialogueRunner;
+    public float maxDistance = 5f;
+    public float sphereRadius = 2f; // Set the radius of the sphere cast
+    private DialogueRunner dialogueRunner;
 
     private void Start()
     {
-          dialogueRunner = FindObjectOfType<DialogueRunner>();
+        dialogueRunner = FindObjectOfType<DialogueRunner>();
     }
-   private void Update()
+
+    private void Update()
     {
         interact();
     }
@@ -22,16 +23,18 @@ public class Interactscript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance))
+            RaycastHit[] hits = Physics.SphereCastAll(transform.position, sphereRadius, transform.forward, maxDistance);
+
+            foreach (RaycastHit hit in hits)
             {
                 if (hit.collider.CompareTag("Intractable"))
                 {
                     string objectName = hit.collider.gameObject.name;
                     Debug.Log("Interacted with: " + objectName);
-                      dialogueRunner.StartDialogue(objectName);
-                } 
-            }           
+                    dialogueRunner.StartDialogue(objectName);
+                    break; // Exit loop after the first interactable object is found
+                }
+            }
         }
     }
 }
