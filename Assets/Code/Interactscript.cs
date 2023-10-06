@@ -7,9 +7,12 @@ public class Interactscript : MonoBehaviour
 
 {
    public float maxDistance = 5f; 
-   public DialogueRunner dialogueRunner;
+   private DialogueRunner dialogueRunner;
 
-
+    private void Start()
+    {
+          dialogueRunner = FindObjectOfType<DialogueRunner>();
+    }
    private void Update()
     {
         interact();
