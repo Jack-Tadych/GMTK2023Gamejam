@@ -11037,7 +11037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a441e0d7b5e49da45803fe64f64b1a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: Apartment1
+  targetScene: RoomApartment1
 --- !u!43 &1343077824
 Mesh:
   m_ObjectHideFlags: 0
@@ -15307,7 +15307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a441e0d7b5e49da45803fe64f64b1a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: Apartment2
+  targetScene: RoomApartment2
 --- !u!1 &1562163485
 GameObject:
   m_ObjectHideFlags: 0

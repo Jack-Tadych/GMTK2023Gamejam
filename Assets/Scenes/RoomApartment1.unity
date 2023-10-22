@@ -7050,7 +7050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a441e0d7b5e49da45803fe64f64b1a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: Stairwell
+  targetScene: RoomStairwell
 --- !u!4 &1301180570
 Transform:
   m_ObjectHideFlags: 0
