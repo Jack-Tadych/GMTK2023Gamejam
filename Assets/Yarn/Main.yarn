@@ -1,5 +1,6 @@
 title: start
 postion: 0,0
+position: 325,-383
 ---
 <<declare $hasPhone = false as bool>>
 ===
@@ -18,7 +19,7 @@ But now it's { getMyNumber() }!
     <<jump Hiking>>
 ===
 title: Swimming
-position: -237,150
+position: -262,-128
 ---
 Companion: Where do you want to swim?
 -> Player: The lake!
@@ -29,7 +30,7 @@ Companion: Where do you want to swim?
 <<jump Done>>
 ===
 title: Hiking
-position: -178,-140
+position: 415,-72
 ---
 Companion: Have you got your hiking boots ready?
 -> Player: Yes.
@@ -40,13 +41,13 @@ Companion: Have you got your hiking boots ready?
 <<jump Done>>
 ===
 title: Done
-position: 281,9
+position: 463,189
 ---
 Player: Sounds good!
 <<add_to_inventory "Sword">>
 ===
 title: MenuCircled
-position: -263,-402
+position: -430,-371
 ---
 A menu from the Deli. 
 [bounce]It looks like the victim circled one of the options[/bounce]
@@ -54,14 +55,14 @@ A menu from the Deli.
 <<stop>>
 ===
 title: GlassShards
-position: -263,-402
+position: -196,-486
 ---
 I broke the window when I came in last night.
 <<add_to_inventory "Glass">>
 <<stop>>
 ===
 title: Phone
-position: -263,-402
+position: -257,90
 ---
 
 <<if !$hasPhone>>
@@ -73,4 +74,54 @@ position: -263,-402
 <<endif>>
 
 <<stop>>
+===
+title: starting
+position: 171,-45
+---
+GATOR: I’ll never forget that night…
+GATOR: The night I... unalived someone.
+GATOR: I ran away as fast as I could...
+
+GATOR: But I knew I’d just end up back at this place.
+Instructions: Use “WASD” or the arrow keys to move.
+GATOR: I have to find someone to frame for this. I can’t be caught!
+Instructions: “E” to talk to the suspects.
+
+===
+title: FANNIE
+position: 57,-210
+---
+FANNIE: “My name is Fannie, dear. I’ll tell you whatever you need to know.”
+GATOR: Great. Let’s get started.
+FANNIE: “It’s so sa-a-a-d.”
+FANNIE: “I just saw Tilly yesterday. We had supper together.”
+GATOR: That’s good to know. I should remember that.
+FANNIE: “To think someone would do this to her! It’s horrible.”
+FANNIE: “Please, Mr. InvestiGator. Find out who hurt that poor girl and bring them to justice!”
+GATOR: Well, someone will be, that’s for sure.
+===
+
+title: MICHELLE
+position: 212,-84
+---
+MICHELLE: “So you’re the one they called. I’ve seen you around here before.”
+GATOR: What?! No way!
+MICHELLE: “I know everyone in this town. Everyone’s got a need for a salon!”
+MICHELLE: “Whether it’s a fur trim or a talon polish, you bet you can get it at Michelle’s place.”
+MICHELLE: “I’ll miss that poor girl... what was her name? Millie?”
+GATOR: So the victim was a customer of the salon...
+MICHELLE: “She was always a polite customer, even when she just wanted to borrow a nail file.”
+MICHELLE: “Now you let me know if those claws ever need a trim!”
+GATOR: Yeah. That’ll happen.
+===
+title: SMOKEY
+position: 301,-74
+---
+SMOKEY: “...”
+GATOR: I know about this butcher. His name is Smokey.
+SMOKEY: “...”
+GATOR: He’s not saying anything... he’s just staring at me suspiciously.
+SMOKEY: “...”
+GATOR: I wonder what he knows…
+
 ===
