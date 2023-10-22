@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 443521667030962088}
   - component: {fileID: 443521667030962091}
   - component: {fileID: 1251621099458386244}
+  - component: {fileID: 1707018886814772783}
   m_Layer: 0
   m_Name: PlayerObject
   m_TagString: Player
@@ -178,6 +179,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0b25b66711eb74ba07bcf39718a405, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1707018886814772783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443521667030962064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c5839a205470b48a4e4333b635f752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 5
+  sphereRadius: 2
 --- !u!1001 &8273271485497043960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -207,15 +222,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1552902230515642417, guid: 5b26576b4f0e37f4592c85aad69b2825, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.10331142
+      value: 0.10331141
       objectReference: {fileID: 0}
     - target: {fileID: 1552902230515642417, guid: 5b26576b4f0e37f4592c85aad69b2825, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017288968
+      value: 0.000000017818381
       objectReference: {fileID: 0}
     - target: {fileID: 1552902230515642417, guid: 5b26576b4f0e37f4592c85aad69b2825, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000017957568
+      value: -0.0000000018507451
       objectReference: {fileID: 0}
     - target: {fileID: 1552902230515642417, guid: 5b26576b4f0e37f4592c85aad69b2825, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

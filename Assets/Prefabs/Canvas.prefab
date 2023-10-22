@@ -482,7 +482,7 @@ GameObject:
   - component: {fileID: 1529077820874708042}
   - component: {fileID: 7460123414434935611}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: PopupPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1056,7 +1056,7 @@ GameObject:
   - component: {fileID: 8633416536793845206}
   - component: {fileID: 7128457741288611185}
   m_Layer: 5
-  m_Name: Image
+  m_Name: IconImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

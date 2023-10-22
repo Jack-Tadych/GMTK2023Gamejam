@@ -1,14 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class Interactscript : MonoBehaviour
-
 {
-   public string  objectInfo;
-   public Sprite objectsprit;
-   public float maxDistance = 5f; // Maximum distance allowed for picking up the item
-   private void Update()
+    public float maxDistance = 5f;
+    public float sphereRadius = 2f; // Set the radius of the sphere cast
+    private DialogueRunner dialogueRunner;
+
+    private void Start()
+    {
+        dialogueRunner = FindObjectOfType<DialogueRunner>();
+    }
+
+    private void Update()
     {
         interact();
     }
@@ -17,16 +23,16 @@ public class Interactscript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            GameObject playerObject = GameObject.FindWithTag("Player");
-            if (playerObject != null)
+            RaycastHit[] hits = Physics.SphereCastAll(transform.position, sphereRadius, transform.forward, maxDistance);
+
+            foreach (RaycastHit hit in hits)
             {
-                Vector3 playerPosition = playerObject.transform.position;
-                // Check if the player is within the maximum distance
-                float distance = Vector3.Distance(transform.position, playerPosition);
-                if (distance <= maxDistance)
+                if (hit.collider.CompareTag("Intractable"))
                 {
-                    GameManager GameManager = FindObjectOfType<GameManager>();
-                    GameManager.ChangePopupTextToSomethingElse(objectInfo, objectsprit);
+                    string objectName = hit.collider.gameObject.name;
+                    Debug.Log("Interacted with: " + objectName);
+                    dialogueRunner.StartDialogue(objectName);
+                    break; // Exit loop after the first interactable object is found
                 }
             }
         }
