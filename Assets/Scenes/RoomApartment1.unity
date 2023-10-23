@@ -1171,7 +1171,7 @@ GameObject:
   - component: {fileID: 324552021}
   - component: {fileID: 324552023}
   m_Layer: 0
-  m_Name: MenuCircled
+  m_Name: FANNIE
   m_TagString: Intractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7344,7 +7344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueView: {fileID: 1691461153}
   continueActionType: 1
-  continueActionKeyCode: 101
+  continueActionKeyCode: 32
 --- !u!1 &946027273
 GameObject:
   m_ObjectHideFlags: 0
