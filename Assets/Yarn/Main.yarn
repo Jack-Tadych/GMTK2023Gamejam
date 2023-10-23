@@ -69,6 +69,7 @@ position: -430,-371
 A menu from the Deli. 
 [bounce]It looks like the victim circled one of the options[/bounce]
 <<add_to_inventory "Menu">>
+<<playPickup>>
 <<stop>>
 ===
 title: GlassShards
@@ -81,7 +82,6 @@ I broke the window when I came in last night.
 title: Phone
 position: -257,90
 ---
-
 <<if !$hasPhone>>
     The victim’s phone. There’s a lot of messages from me on here...
     <<add_to_inventory "Vphone">>

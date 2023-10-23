@@ -18,6 +18,8 @@ public class Interactscript : MonoBehaviour
     {
         interact();
     }
+   
+
 
     private void interact()
     {
@@ -37,4 +39,7 @@ public class Interactscript : MonoBehaviour
             }
         }
     }
+    
 }
+
+ 
