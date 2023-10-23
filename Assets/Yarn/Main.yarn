@@ -56,3 +56,52 @@ MICHELLE: “Now you let me know if those claws ever need a trim!”
 GATOR: Yeah. That’ll happen.
 
 ===
+title: start
+postion: 0,0
+position: 325,-383
+---
+<<declare $hasPhone = false as bool>>
+===
+
+title: MenuCircled
+position: -430,-371
+---
+A menu from the Deli. 
+[bounce]It looks like the victim circled one of the options[/bounce]
+<<add_to_inventory "Menu">>
+<<stop>>
+===
+title: GlassShards
+position: -196,-486
+---
+I broke the window when I came in last night.
+<<add_to_inventory "Glass">>
+<<stop>>
+===
+title: Phone
+position: -257,90
+---
+
+<<if !$hasPhone>>
+    The victim’s phone. There’s a lot of messages from me on here...
+    <<add_to_inventory "Vphone">>
+    <<set $hasPhone to true>>
+<<else>>
+    I already have it
+<<endif>>
+
+<<stop>>
+===
+title: starting
+position: 171,-45
+---
+GATOR: I’ll never forget that night…
+GATOR: The night I... unalived someone.
+GATOR: I ran away as fast as I could...
+
+GATOR: But I knew I’d just end up back at this place.
+Instructions: Use “WASD” or the arrow keys to move.
+GATOR: I have to find someone to frame for this. I can’t be caught!
+Instructions: “E” to talk to the suspects.
+
+===
