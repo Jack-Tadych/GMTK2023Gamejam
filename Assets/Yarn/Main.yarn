@@ -1,3 +1,4 @@
+// Fannie's diolog
 title: FANNIE
 position: -34,-391
 ---
@@ -35,6 +36,8 @@ GATOR: Yeah, they were stinking up the whole place.
 GATOR: ...I’m not really one to talk, though.
 
 ===
+
+//MICHELLE's diolog
 title: MICHELLE
 position: -262,-128
 ---
@@ -55,6 +58,8 @@ MICHELLE: “She was always a polite customer, even when she just wanted to borr
 MICHELLE: “Now you let me know if those claws ever need a trim!”
 GATOR: Yeah. That’ll happen.
 
+
+//ITEMS
 ===
 title: start
 postion: 0,0
@@ -92,6 +97,8 @@ position: -257,90
 
 <<stop>>
 ===
+
+//GATOR SELF TALK
 title: starting
 position: 171,-45
 ---
