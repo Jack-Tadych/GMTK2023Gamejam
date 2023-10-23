@@ -20,10 +20,13 @@ public class InventoryUI : MonoBehaviour
 
     // Yarb Commands can be static or non-static
     [YarnCommand("add_to_inventory")]
-    public static void SetMyNumber(string item) { 
+    public static void add_to_inventory(string item) { 
         Debug.Log($"Added {item} to inventory!");
     }
-
+    [YarnCommand("playPickup")]
+    public static void playPickup() { 
+        Debug.Log("gaypeople bad");
+    }
     // Other inventory management methods can be added here...
 
     // Method to check if an item is in the inventory
