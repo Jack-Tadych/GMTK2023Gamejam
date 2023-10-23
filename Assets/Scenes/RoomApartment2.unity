@@ -39396,8 +39396,8 @@ GameObject:
   - component: {fileID: 2088491420}
   - component: {fileID: 2088491423}
   m_Layer: 0
-  m_Name: Fannie_3
-  m_TagString: Untagged
+  m_Name: FANNIE
+  m_TagString: Intractable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
