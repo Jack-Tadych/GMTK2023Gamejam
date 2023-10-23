@@ -11392,7 +11392,7 @@ MonoBehaviour:
   firstSong: {fileID: 0}
   defaultimage: {fileID: 0}
   spawnPoint: {fileID: 2098867975}
-  playerPrefab: {fileID: 443521667030962064, guid: e7867823ab083a443a233f89d695ae4b, type: 3}
+  playerPrefab: {fileID: 2429632887042569134, guid: e567d28e2871bc1469339d4efaccb75f, type: 3}
   canvasPrefab: {fileID: 5758562974260778949, guid: d90766641e3d2bc43a8ee2fba4a2867d, type: 3}
 --- !u!4 &732965521
 Transform:

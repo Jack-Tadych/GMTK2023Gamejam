@@ -8,11 +8,12 @@ public class PlayerScript : MonoBehaviour
     public SpriteRenderer sr;
     private bool facingRight = true;
     private bool hasFlipped = false;
+    public GameObject grandchild;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        anim = GetComponent<Animator>();
+        anim = grandchild.GetComponent<Animator>();
     }
 
     private void FixedUpdate()

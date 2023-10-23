@@ -784,8 +784,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28354707}
-  m_LocalRotation: {x: 0.10331141, y: -0.000000017818381, z: 0.0000000018507451, w: 0.9946491}
-  m_LocalPosition: {x: -3.080988, y: 4.24, z: 2.0277882}
+  m_LocalRotation: {x: 0.10331142, y: 0.000000017288968, z: -0.0000000017957568, w: 0.9946491}
+  m_LocalPosition: {x: 0.004563332, y: 1.741114, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2937,7 +2937,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-62240
+  m_Name: pb_Mesh58466
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3964,7 +3964,7 @@ MonoBehaviour:
   firstSong: {fileID: 0}
   defaultimage: {fileID: 0}
   spawnPoint: {fileID: 2098867975}
-  playerPrefab: {fileID: 443521667030962064, guid: e7867823ab083a443a233f89d695ae4b, type: 3}
+  playerPrefab: {fileID: 2429632887042569134, guid: e567d28e2871bc1469339d4efaccb75f, type: 3}
   canvasPrefab: {fileID: 5758562974260778949, guid: d90766641e3d2bc43a8ee2fba4a2867d, type: 3}
 --- !u!4 &732965521
 Transform:
@@ -4081,7 +4081,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28462
+  m_Name: pb_Mesh58380
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6613,7 +6613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9224e8b108eae0348a073c24a865b9b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetMaterial: {fileID: 2100000, guid: e6b9b44320f4448d9d5e0ee634259966, type: 2}
+  targetMaterial: {fileID: 2100000, guid: b8bca7063c6d4ab4f9738112fc44c655, type: 2}
   transparency: 1
 --- !u!65 &1336623672
 BoxCollider:
@@ -6670,7 +6670,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: aeca8ec417650964791744b44e1bb8fe, type: 2}
+  - {fileID: 2100000, guid: b8bca7063c6d4ab4f9738112fc44c655, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9625,7 +9625,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28516
+  m_Name: pb_Mesh58450
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
