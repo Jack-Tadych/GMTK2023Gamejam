@@ -2,94 +2,19 @@ title: start
 postion: 0,0
 position: 325,-383
 ---
-<<declare $hasPhone = false as bool>>
-===
-title: other
-position: -34,-391
----
-Companion: Hi there! What do you feel like doing today?
-My number is { getMyNumber() }!
-<<setMyNumber "999">>
-But now it's { getMyNumber() }!
--> Player: I want to go swimming.
-    Companion: Okay, let's go swimming.
-    <<jump Swimming>>
--> Player: I'd prefer to go hiking.
-    Companion: Cool, we'll go hiking then.
-    <<jump Hiking>>
-===
-title: Swimming
-position: -262,-128
----
-Companion: Where do you want to swim?
--> Player: The lake!
-    Companion: Nice! It's a great day for it.
--> Player: The swimming pool!
-    Companion: Oh, awesome! I heard they installed a new slide.
-
-<<jump Done>>
-===
-title: Hiking
-position: 415,-72
----
-Companion: Have you got your hiking boots ready?
--> Player: Yes.
-    Companion: Great, let's go!
--> Player: No.
-    Companion: We can swing by your place and pick them up!
-
-<<jump Done>>
-===
-title: Done
-position: 463,189
----
-Player: Sounds good!
-<<add_to_inventory "Sword">>
-===
-title: MenuCircled
-position: -430,-371
----
-A menu from the Deli. 
-[bounce]It looks like the victim circled one of the options[/bounce]
-<<add_to_inventory "Menu">>
-<<stop>>
-===
-title: GlassShards
-position: -196,-486
----
-I broke the window when I came in last night.
-<<add_to_inventory "Glass">>
-<<stop>>
-===
-title: Phone
-position: -257,90
----
-
-<<if !$hasPhone>>
-    The victim’s phone. There’s a lot of messages from me on here...
-    <<add_to_inventory "Vphone">>
-    <<set $hasPhone to true>>
-<<else>>
-    I already have it
-<<endif>>
-
-<<stop>>
-===
-title: starting
-position: 171,-45
----
-GATOR: I’ll never forget that night…
-GATOR: The night I... unalived someone.
-GATOR: I ran away as fast as I could...
-
-GATOR: But I knew I’d just end up back at this place.
-Instructions: Use “WASD” or the arrow keys to move.
-GATOR: I have to find someone to frame for this. I can’t be caught!
-Instructions: “E” to talk to the suspects.
-
 ===
 title: FANNIE
-position: 57,-210
+position: -34,-391
+---
+-> Instruction: FANNIE_TALK
+    <<jump FANNIE_TALK>>
+-> Instruction: VICTIM_APT
+    <<jump FANNIE_VICTIM_APT>>
+-> Instruction: FANNIES_APT
+    <<jump FANNIE_FANNIES_APT>>
+===
+title: FANNIE_TALK
+position: -262,-128
 ---
 FANNIE: “My name is Fannie, dear. I’ll tell you whatever you need to know.”
 GATOR: Great. Let’s get started.
@@ -97,14 +22,35 @@ FANNIE: “It’s so sa-a-a-d.”
 FANNIE: “I just saw Tilly yesterday. We had supper together.”
 GATOR: That’s good to know. I should remember that.
 FANNIE: “To think someone would do this to her! It’s horrible.”
-FANNIE: “Please, Mr. InvestiGator. Find out who hurt that poor girl and bring them to justice!”
+FANNIE: “Please, Mr. InvestiGATOR: Find out who hurt that poor girl and bring them to justice!”
 GATOR: Well, someone will be, that’s for sure.
 ===
-
-title: MICHELLE
-position: 212,-84
+title: FANNIE_VICTIM_APT
+position: -262,-128
 ---
-MICHELLE: “So you’re the one they called. I’ve seen you around here before.”
+FANNIE: “Oh, you must have seen that picture of us together, me and Tilly. We had so much fun that day.”
+GATOR: I wonder why they were such close friends...?
+
+===
+title: FANNIE_FANNIES_APT
+position: -262,-128
+---
+FANNIE: “Oh, dear. I think I forgot to do the dishes! That’s so embarrassing...”
+GATOR: Yeah, they were stinking up the whole place.
+GATOR: ...I’m not really one to talk, though.
+
+===
+title: MICHELLE
+position: -262,-128
+---
+-> Instruction: MICHELLE_TALK
+    <<jump MICHELLE_TALK>>
+===
+
+title: MICHELLE_TALK
+position: -262,-128
+---
+MICHELLE. “So you’re the one they called. I’ve seen you around here before.”
 GATOR: What?! No way!
 MICHELLE: “I know everyone in this town. Everyone’s got a need for a salon!”
 MICHELLE: “Whether it’s a fur trim or a talon polish, you bet you can get it at Michelle’s place.”
@@ -113,15 +59,5 @@ GATOR: So the victim was a customer of the salon...
 MICHELLE: “She was always a polite customer, even when she just wanted to borrow a nail file.”
 MICHELLE: “Now you let me know if those claws ever need a trim!”
 GATOR: Yeah. That’ll happen.
-===
-title: SMOKEY
-position: 301,-74
----
-SMOKEY: “...”
-GATOR: I know about this butcher. His name is Smokey.
-SMOKEY: “...”
-GATOR: He’s not saying anything... he’s just staring at me suspiciously.
-SMOKEY: “...”
-GATOR: I wonder what he knows…
 
 ===
