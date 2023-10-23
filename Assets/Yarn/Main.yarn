@@ -71,8 +71,7 @@ position: -430,-371
 A menu from the Deli. 
 [bounce]It looks like the victim circled one of the options[/bounce]
 <<add_to_inventory "Menu">>
-
-<<playPickup>>
+<<isItem>>
 <<stop>>
 ===
 title: GlassShards

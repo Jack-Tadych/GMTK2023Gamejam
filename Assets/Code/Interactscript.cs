@@ -31,15 +31,22 @@ public class Interactscript : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Intractable"))
                 {
+                    
                     string objectName = hit.collider.gameObject.name;
                     Debug.Log("Interacted with: " + objectName);
                     dialogueRunner.StartDialogue(objectName);
+                    GameObject test = hit.collider.gameObject;
+                    deactivate(test);
                     break; // Exit loop after the first interactable object is found
                 }
             }
         }
     }
     
+   
+    public static void deactivate(GameObject test){
+        test.SetActive(false);
+    }
 }
 
  

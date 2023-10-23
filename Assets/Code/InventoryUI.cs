@@ -25,8 +25,9 @@ public class InventoryUI : MonoBehaviour
     }
     [YarnCommand("playPickup")]
     public static void playPickup() { 
-        Debug.Log("gaypeople bad");
+        Debug.Log("Jaymes");
     }
+    
     // Other inventory management methods can be added here...
 
     // Method to check if an item is in the inventory
