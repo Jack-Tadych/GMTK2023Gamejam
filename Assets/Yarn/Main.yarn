@@ -1,3 +1,4 @@
+// Fannie's diolog
 title: FANNIE
 position: -34,-391
 ---
@@ -35,6 +36,8 @@ GATOR: Yeah, they were stinking up the whole place.
 GATOR: ...I’m not really one to talk, though.
 
 ===
+
+//MICHELLE's diolog
 title: MICHELLE
 position: -262,-128
 ---
@@ -54,28 +57,20 @@ GATOR: So the victim was a customer of the salon...
 MICHELLE: “She was always a polite customer, even when she just wanted to borrow a nail file.”
 MICHELLE: “Now you let me know if those claws ever need a trim!”
 GATOR: Yeah. That’ll happen.
-
 ===
-<<<<<<< Updated upstream
+//ITEMS
 title: start
 postion: 0,0
 position: 325,-383
 ---
 <<declare $hasPhone = false as bool>>
 ===
-
-=======
->>>>>>> Stashed changes
 title: MenuCircled
 position: -430,-371
 ---
 A menu from the Deli. 
 [bounce]It looks like the victim circled one of the options[/bounce]
-<<add_to_inventory "Menu">>
-<<<<<<< Updated upstream
-<<playPickup>>
-=======
->>>>>>> Stashed changes
+<< add_to_inventory "Menu">>
 <<stop>>
 ===
 title: GlassShards
@@ -88,10 +83,6 @@ I broke the window when I came in last night.
 title: Phone
 position: -257,90
 ---
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 <<if !$hasPhone>>
     The victim’s phone. There’s a lot of messages from me on here...
     <<add_to_inventory "Vphone">>
@@ -101,8 +92,10 @@ position: -257,90
 <<endif>>
 
 <<stop>>
-<<<<<<< Updated upstream
+
 ===
+
+//GATOR SELF TALK
 title: starting
 position: 171,-45
 ---
@@ -116,6 +109,3 @@ GATOR: I have to find someone to frame for this. I can’t be caught!
 Instructions: “E” to talk to the suspects.
 
 ===
-=======
-===
->>>>>>> Stashed changes
