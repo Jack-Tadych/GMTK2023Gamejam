@@ -64,13 +64,20 @@ postion: 0,0
 position: 325,-383
 ---
 <<declare $hasPhone = false as bool>>
+<<declare $hasMenu = false as bool>>
 ===
 title: MenuCircled
 position: -430,-371
 ---
-A menu from the Deli. 
-[bounce]It looks like the victim circled one of the options[/bounce]
-<< add_to_inventory "Menu">>
+<<if !$hasMenu>>
+    A menu from the Deli. 
+    [bounce]It looks like the victim circled one of the options[/bounce]
+    << add_to_inventory "Menu">>
+    
+    <<set $hasMenu to true>>
+<<else>>
+    please help me
+<<endif>>
 <<stop>>
 ===
 title: GlassShards
